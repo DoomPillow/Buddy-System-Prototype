@@ -11,6 +11,8 @@ height = 100.0
 script = ExtResource( 2 )
 
 [node name="Zipper" type="AnimatedSprite" parent="."]
+z_index = -1
+z_as_relative = false
 frames = ExtResource( 1 )
 animation = "Zipper"
 

@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=6]
+
+[node name="Main Scene" type="Node2D"]
+position = Vector2( -31, 12 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 88, -52 )
+collision_layer = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Ground"]
+position = Vector2( 457, 336 )
+frames = ExtResource( 2 )
+animation = "levels"
+frame = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( -43, 418, -14, 421, 37, 423, 185, 422, 258, 417, 358, 416, 436, 420, 578, 425, 630, 428, 697, 426, 740, 424, 756, 416, 773, 414, 798, 417, 840, 423, 882, 422, 897, 422, 957, 420, 958, 639, -39, 641 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 404, 267, 399, 284, 400, 301, 402, 319, 410, 326, 431, 328, 462, 329, 471, 324, 473, 286, 466, 268, 451, 267, 420, 265 )
+
+[node name="Door" parent="." instance=ExtResource( 4 )]
+position = Vector2( 524, 323 )
+uses_button = true
+
+[node name="Button" parent="Door" instance=ExtResource( 6 )]
+position = Vector2( 196, 36 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 164, 321 )
+
+[node name="Player2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 212, 339 )
+_PlayerChar = "CIRCLE"
+ControlScheme = "arrows"
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 518, 295.4 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Exit" parent="." instance=ExtResource( 3 )]
+position = Vector2( 962, 366 )

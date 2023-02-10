@@ -26,7 +26,8 @@ var grav: int = 1200;
 ### Animation Vars
 
 onready var image: AnimatedSprite = $Sprite;
-var finished_anim := false;
+var anim_state : int = 0;
+
 
 ### input
 export(String, "wasd","arrows") var ControlScheme = "wasd";
@@ -64,15 +65,15 @@ func move(xinput,yinput,delta):
 	if xinput != 0:
 		
 		image.flip_h = false if xinput == 1 else true;
-		if image.animation != "Bounce down" && image.animation != "Bounce loop":
+		if anim_state == 0:
 			image.animation = "Walking" if onfloor else "Jumping";
 		
 		pass
 	else:
-		if image.animation != "Bounce down" && image.animation != "Bounce loop":
+		if anim_state == 0:
 			image.animation = "Idle" if onfloor else "Jumping";
 	
-	if image.animation == "Jumping":
+	if image.animation == "Jumping" && anim_state == 0:
 		
 		image.frame = 0 if velocity.y < 0 else 1;
 		
@@ -127,51 +128,55 @@ func _physics_process(delta):
 			collision_mask = 3;
 		
 		pass
-	else:
+	else: ### SQUARE
 		
 		if using_ability:
 			
 			was_using_ability = true;
+			anim_state = 1 if anim_state == 0 else anim_state;
 			
 			# Offset
-			hitbox.position.x = lerp(hitbox.position.x,1,0.3);
-			hitbox.position.y = lerp(hitbox.position.y,-9,0.3);
+			hitbox.position.x = lerp(hitbox.position.x,1,0.08);
+			hitbox.position.y = lerp(hitbox.position.y,-9,0.08);
 			# Transform
-			hitbox.shape.extents.x = lerp(hitbox.shape.extents.x,19,0.3);
-			hitbox.shape.extents.y = lerp(hitbox.shape.extents.y,9,0.3);
-			
-			# Animations
-			
-			image.animation = "Bounce down" if !finished_anim else "Bounce loop";
-			
-			print(finished_anim);
-			if image.animation == "Bounce down" && image.frame == 3:
-				finished_anim = true;
+			hitbox.shape.extents.x = lerp(hitbox.shape.extents.x,19,0.08);
+			hitbox.shape.extents.y = lerp(hitbox.shape.extents.y,9,0.08);
 			
 			pass
 		else:
 			
 			if was_using_ability:
 				was_using_ability = false;
-				var bounceray = get_world_2d().direct_space_state.intersect_ray(global_position,global_position + Vector2(0,-50),[self]);
+				anim_state = 3;
+				var bounceray = get_world_2d().direct_space_state.intersect_ray(global_position+Vector2(-10,0),global_position + Vector2(10,-50),[self]);
 				if bounceray.size() > 0:
 					var obj = instance_from_id(bounceray.collider_id);
-					obj.push.y -= 2000;
+					if str(obj.get_class()) == "KinematicBody2D":
+						obj.push.y -= 2000;
 					
-				# Animations
-				image.animation = "Bounce up";
 				
 				pass
 			
-			if image.animation == "Bounce up" && image.frame == 4:
-				finished_anim = false;
-			
 			# Offset
-			hitbox.position.x = lerp(hitbox.position.x,1.5,0.6);
-			hitbox.position.y = lerp(hitbox.position.y,-19,0.6);
+			hitbox.position.x = lerp(hitbox.position.x,1.5,0.3);
+			hitbox.position.y = lerp(hitbox.position.y,-19,0.3);
 			
 			# Transform
-			hitbox.shape.extents.x = lerp(hitbox.shape.extents.x,12.5,0.6);
-			hitbox.shape.extents.y = lerp(hitbox.shape.extents.y,19,0.6);
+			hitbox.shape.extents.x = lerp(hitbox.shape.extents.x,12.5,0.3);
+			hitbox.shape.extents.y = lerp(hitbox.shape.extents.y,19,0.3);
 			
+			pass
+	match(anim_state):
+		1:
+			image.animation = "Bounce down"
+			if image.frame == 3:
+				anim_state = 2;
+			pass
+		2:
+			image.animation = "Bounce loop"
+			pass
+		3:
+			image.animation = "Bounce up"
+			if image.frame == 4:
+				anim_state = 0;
 			pass

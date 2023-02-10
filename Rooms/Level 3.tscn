@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
+
+[node name="Main Scene" type="Node2D"]
+position = Vector2( -31, 12 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 88, -52 )
+collision_layer = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Ground"]
+position = Vector2( 457, 336 )
+frames = ExtResource( 7 )
+animation = "levels"
+frame = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( -42, 457, 24, 457, 47, 460, 109, 461, 179, 459, 260, 454, 266, 444, 268, 411, 289, 388, 330, 389, 471, 391, 682, 388, 711, 391, 745, 393, 767, 394, 795, 391, 817, 389, 887, 385, 931, 389, 957, 390, 959, 638, -42, 637 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 271, 36, 272, 111, 270, 121, 270, 147, 282, 169, 395, 171, 465, 174, 604, 174, 723, 169, 755, 163, 758, 145, 763, 36 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 518, 295.4 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 80, 398 )
+
+[node name="Player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 111, 398 )
+_PlayerChar = "CIRCLE"
+ControlScheme = "arrows"
+
+[node name="Door2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 720, 295 )
+uses_button = true
+
+[node name="Button" parent="Door2" instance=ExtResource( 1 )]
+position = Vector2( -516, 98 )
+
+[node name="Exit" parent="Door2" instance=ExtResource( 5 )]
+position = Vector2( 214, 41 )
+
+[node name="Door" parent="." instance=ExtResource( 2 )]
+position = Vector2( 472, 295 )
+inverse = true
+uses_button = true
+
+[node name="Button" parent="Door" instance=ExtResource( 1 )]
+position = Vector2( -268, 98 )
+
+[node name="Box" parent="." instance=ExtResource( 3 )]
+position = Vector2( 818, 343 )
