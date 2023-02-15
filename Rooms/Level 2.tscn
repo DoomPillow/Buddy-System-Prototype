@@ -94,6 +94,6 @@ _PlayerChar = "CIRCLE"
 ControlScheme = "arrows"
 
 [node name="Exit" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1006, 177 )
+position = Vector2( 925, 173 )
 
 [editable path="Moving Platform"]

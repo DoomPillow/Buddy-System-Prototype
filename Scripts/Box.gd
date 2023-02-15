@@ -22,6 +22,7 @@ func _process(delta):
 			
 			if body._PlayerChar == "SQUARE" && body.using_ability:
 				position.y -= 5;
+				position.x += sign(body.position.x - position.x);
 			else:
 				velocity.x = -pushspeed * sign(body.global_position.x - global_position.x) * delta;
 			

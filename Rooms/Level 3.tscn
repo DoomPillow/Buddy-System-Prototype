@@ -27,7 +27,7 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( -42, 457, 24, 457, 47, 460, 109, 461, 179, 459, 260, 454, 266, 444, 268, 411, 289, 388, 330, 389, 471, 391, 682, 388, 711, 391, 745, 393, 767, 394, 795, 391, 817, 389, 887, 385, 931, 389, 957, 390, 959, 638, -42, 637 )
+polygon = PoolVector2Array( -42, 457, 24, 457, 47, 460, 109, 461, 179, 459, 233, 457, 257, 440, 268, 411, 295, 392, 330, 389, 471, 391, 682, 388, 711, 391, 745, 393, 767, 394, 795, 391, 817, 389, 887, 385, 931, 389, 957, 390, 959, 638, -42, 637 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 271, 36, 272, 111, 270, 121, 270, 147, 282, 169, 395, 171, 465, 174, 604, 174, 723, 169, 755, 163, 758, 145, 763, 36 )
@@ -47,17 +47,17 @@ ControlScheme = "arrows"
 
 [node name="Door2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 720, 295 )
+inverse = true
 uses_button = true
 
 [node name="Button" parent="Door2" instance=ExtResource( 1 )]
 position = Vector2( -516, 98 )
 
 [node name="Exit" parent="Door2" instance=ExtResource( 5 )]
-position = Vector2( 214, 41 )
+position = Vector2( 210, 39 )
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
 position = Vector2( 472, 295 )
-inverse = true
 uses_button = true
 
 [node name="Button" parent="Door" instance=ExtResource( 1 )]

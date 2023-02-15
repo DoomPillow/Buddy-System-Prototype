@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Objects/Moving Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
+
+[node name="Main Scene" type="Node2D"]
+position = Vector2( -31, 12 )
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 88, -52 )
+collision_layer = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Ground"]
+position = Vector2( 457, 336 )
+frames = ExtResource( 7 )
+animation = "levels"
+frame = 5
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( -43, 498, -8, 502, 67, 504, 117, 504, 143, 503, 168, 508, 177, 520, 179, 545, 183, 607, 184, 637, -63, 667 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 704, 509, 706, 540, 711, 594, 707, 639, 961, 694, 955, 504, 917, 505, 877, 506, 821, 509, 766, 502, 731, 506 )
+
+[node name="Platform1" type="CollisionPolygon2D" parent="Ground"]
+polygon = PoolVector2Array( 623, 351, 623, 357, 598, 364, 511, 364, 448, 366, 436, 363, 435, 352, 456, 346, 546, 347, 602, 346 )
+one_way_collision = true
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 518, 295.4 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Grate2" type="StaticBody2D" parent="."]
+position = Vector2( 88, -52 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="Grate1" type="CollisionPolygon2D" parent="Grate2"]
+polygon = PoolVector2Array( 456, 368, 451, 502, 465, 504, 467, 369 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 80, 398 )
+
+[node name="Player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 111, 398 )
+_PlayerChar = "CIRCLE"
+ControlScheme = "arrows"
+
+[node name="Moving Platform" parent="." instance=ExtResource( 1 )]
+position = Vector2( 546, 466 )
+active = true
+speed = 50.0
+
+[node name="Zipper" parent="Moving Platform" index="0"]
+rotation = 1.58038
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Platform" parent="Moving Platform" index="1"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Platform Sprite" parent="Moving Platform/Platform" index="0"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" parent="Moving Platform/Platform" index="1"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="grip" parent="Moving Platform/Platform" index="2"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" parent="Moving Platform/Platform/grip" index="0"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="START POS" parent="Moving Platform" index="2"]
+position = Vector2( -267, -9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="END POS" parent="Moving Platform" index="3"]
+position = Vector2( 231, -9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[editable path="Moving Platform"]

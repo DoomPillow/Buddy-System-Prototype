@@ -61,5 +61,11 @@ func _process(delta):
 			Platform.position.y += sign(StartPos.position.y - Platform.position.y) * delta * speed;
 		
 	
+	for body in $Platform/grip.get_overlapping_bodies():
+		
+		if body is PlayerChar || body is Box:
+			
+			body.position.x -= sign(StartPos.position.x - Platform.position.x) * delta * speed;
+			body.position.y -= sign(StartPos.position.y - Platform.position.y) * delta * speed;
 	
 	pass
