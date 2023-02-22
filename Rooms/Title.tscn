@@ -3,9 +3,9 @@
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sprites/titlescreen.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/GUI Button.tscn" type="PackedScene" id=6]
 
 [node name="Main Scene" type="Node2D"]
 position = Vector2( -45, 12 )
@@ -18,7 +18,6 @@ motion_scale = Vector2( 0, 0 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Sky"]
 frames = ExtResource( 2 )
 animation = "Sky"
-frame = 1
 __meta__ = {
 "_edit_lock_": true
 }
@@ -30,7 +29,6 @@ motion_scale = Vector2( 0.8, 0.8 )
 position = Vector2( 414, 233 )
 frames = ExtResource( 2 )
 animation = "Parallax 1"
-frame = 1
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.9, 0.9 )
@@ -39,10 +37,9 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Background"]
-position = Vector2( 450, 260 )
+position = Vector2( 450, 285 )
 frames = ExtResource( 2 )
 animation = "Background"
-frame = 1
 __meta__ = {
 "_edit_lock_": true
 }
@@ -56,7 +53,6 @@ __meta__ = {
 position = Vector2( 500, 296 )
 frames = ExtResource( 2 )
 animation = "Ground"
-frame = 1
 __meta__ = {
 "_edit_lock_": true
 }
@@ -69,33 +65,41 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( -43, 418, -14, 421, 37, 423, 185, 422, 258, 417, 358, 416, 436, 420, 578, 425, 630, 428, 697, 426, 740, 424, 756, 416, 773, 414, 798, 417, 840, 423, 882, 422, 897, 422, 957, 420, 958, 639, -39, 641 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 404, 267, 399, 284, 400, 301, 402, 319, 410, 326, 431, 328, 462, 329, 471, 324, 473, 286, 466, 268, 451, 267, 420, 265 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Door" parent="." instance=ExtResource( 4 )]
-position = Vector2( 524, 323 )
-uses_button = true
-
-[node name="Button" parent="Door" instance=ExtResource( 6 )]
-position = Vector2( 196, 36 )
+polygon = PoolVector2Array( 957, 380, 904, 381, 871, 376, 821, 383, 772, 381, 721, 377, 675, 381, 632, 381, 596, 387, 557, 381, 509, 377, 453, 381, 445, 389, 438, 428, 434, 466, 434, 512, 447, 522, 465, 532, 473, 549, 473, 561, 480, 562, 487, 554, 494, 563, 496, 583, 497, 606, 506, 610, 509, 644, 957, 639 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 164, 321 )
+position = Vector2( 553, 319 )
 
 [node name="Player2" parent="." instance=ExtResource( 1 )]
-position = Vector2( 212, 339 )
+position = Vector2( 590, 318 )
 _PlayerChar = "CIRCLE"
 ControlScheme = "arrows"
 
-[node name="Exit" parent="." instance=ExtResource( 3 )]
-position = Vector2( 962, 366 )
+[node name="Door" parent="." instance=ExtResource( 3 )]
+position = Vector2( 960, 324 )
 
 [node name="Camera" parent="." instance=ExtResource( 5 )]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+visible = false
+offset = Vector2( 40, 0 )
+scale = Vector2( 1.6, 1.6 )
+transform = Transform2D( 1.6, 0, 0, 1.6, 40, 0 )
+
+[node name="Title" type="AnimatedSprite" parent="GUI"]
+position = Vector2( 295.5, 165 )
+frames = ExtResource( 4 )
+animation = "Title"
+frame = 2
+playing = true
+
+[node name="Play" parent="GUI" instance=ExtResource( 6 )]
+position = Vector2( 250, 348.125 )
+
+[node name="Options" parent="GUI" instance=ExtResource( 6 )]
+position = Vector2( 253.75, 527.5 )
+animation = "Exit"
+
+[node name="Exit" parent="GUI" instance=ExtResource( 6 )]
+position = Vector2( 325, 433.75 )
+animation = "Options"

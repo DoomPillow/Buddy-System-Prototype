@@ -1,27 +1,67 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
 
 [node name="Main Scene" type="Node2D"]
 position = Vector2( -31, 12 )
 
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2( 88, -52 )
-collision_layer = 3
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Sky"]
+frames = ExtResource( 7 )
+animation = "Sky"
+frame = 3
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Ground"]
-position = Vector2( 457, 336 )
+[node name="Parallax 1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 0.8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Parallax 1"]
+position = Vector2( 417, 234 )
 frames = ExtResource( 7 )
-animation = "levels"
+animation = "Parallax 1"
 frame = 3
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Background"]
+position = Vector2( 447, 264 )
+frames = ExtResource( 7 )
+animation = "Background"
+frame = 3
+
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Ground"]
+position = Vector2( 514, 296 )
+frames = ExtResource( 7 )
+animation = "Ground"
+frame = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 88, -52 )
+collision_layer = 3
 __meta__ = {
 "_edit_lock_": true
 }
@@ -31,11 +71,6 @@ polygon = PoolVector2Array( -42, 457, 24, 457, 47, 460, 109, 461, 179, 459, 233,
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 271, 36, 272, 111, 270, 121, 270, 147, 282, 169, 395, 171, 465, 174, 604, 174, 723, 169, 755, 163, 758, 145, 763, 36 )
-
-[node name="Camera" type="Camera2D" parent="."]
-position = Vector2( 518, 295.4 )
-current = true
-zoom = Vector2( 0.5, 0.5 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 80, 398 )
@@ -65,3 +100,5 @@ position = Vector2( -268, 98 )
 
 [node name="Box" parent="." instance=ExtResource( 3 )]
 position = Vector2( 818, 343 )
+
+[node name="Camera" parent="." instance=ExtResource( 6 )]

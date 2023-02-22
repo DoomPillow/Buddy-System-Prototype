@@ -91,6 +91,12 @@ func move(xinput,yinput,delta):
 
 func _physics_process(delta):
 	
+	# Adjust gloabal positions
+	if _PlayerChar == "SQUARE":
+		Global.playerpos_1 = position;
+	else: 
+		Global.playerpos_2 = position;
+	
 	print(image.frame);
 	
 	# Check if onfloor using Raycast
@@ -122,10 +128,13 @@ func _physics_process(delta):
 		if using_ability:
 				
 				collision_mask = 1;
-				
+				if (image.frames) != load("res://Sprites/Circle P Animations.tres"):
+					image.frames = load("res://Sprites/Circle P Animations.tres");
 				pass 
 		else:
 			collision_mask = 3;
+			if (image.frames) != load("res://Sprites/Circle Animations.tres"):
+				image.frames = load("res://Sprites/Circle Animations.tres");
 		
 		pass
 	else: ### SQUARE
