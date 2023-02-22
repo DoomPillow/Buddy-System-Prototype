@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Clouds.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/Cloud.gd" type="Script" id=2]
+
+[node name="sprite" type="AnimatedSprite"]
+frames = ExtResource( 1 )
+animation = "big"
+playing = true
+script = ExtResource( 2 )
