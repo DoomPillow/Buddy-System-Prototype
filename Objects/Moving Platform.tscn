@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Sprites/Moving Platform.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scripts/Moving Platform Script.gd" type="Script" id=2]
@@ -7,10 +7,15 @@
 radius = 7.0
 height = 100.0
 
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 51, 5.5 )
+
 [node name="Moving Platform" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Zipper" type="AnimatedSprite" parent="."]
+z_index = -5
+z_as_relative = false
 frames = ExtResource( 1 )
 animation = "Zipper"
 
@@ -24,6 +29,12 @@ animation = "Platform"
 position = Vector2( -1, 9 )
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="grip" type="Area2D" parent="Platform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform/grip"]
+position = Vector2( -1, 4.5 )
+shape = SubResource( 2 )
 
 [node name="START POS" type="Node2D" parent="."]
 

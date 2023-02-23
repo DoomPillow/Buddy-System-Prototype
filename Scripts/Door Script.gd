@@ -3,7 +3,9 @@ extends Node2D
 onready var sprite = $Sprite;
 onready var hitbox = $CollisionBox;
 
-export(bool) var open: bool = false;
+
+export(bool) var inverse = false;
+var open: bool = false;
 export(bool) var uses_button: bool = false;
 
 
@@ -18,6 +20,6 @@ func _process(delta):
 	hitbox.disabled = true if open else false;
 	
 	if uses_button:
-		open = $Button.active;
+		open = $Button.active if !inverse else !$Button.active;
 	
 	pass

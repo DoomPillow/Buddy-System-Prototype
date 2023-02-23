@@ -50,32 +50,26 @@ atlas = ExtResource( 8 )
 region = Rect2( 855, 0, 95, 46 )
 
 [sub_resource type="AtlasTexture" id=12]
-flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 45, 45 )
 
 [sub_resource type="AtlasTexture" id=13]
-flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 45, 0, 45, 45 )
 
 [sub_resource type="AtlasTexture" id=14]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 45, 45 )
 
 [sub_resource type="AtlasTexture" id=15]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 45, 0, 45, 45 )
 
 [sub_resource type="AtlasTexture" id=16]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 90, 0, 45, 45 )
 
 [sub_resource type="AtlasTexture" id=17]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 135, 0, 45, 45 )
 
@@ -89,12 +83,12 @@ animations = [ {
 "frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "Bounce loop",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 10 ) ],
 "loop": false,
 "name": "Bounce up",
-"speed": 2.0
+"speed": 35.0
 }, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,

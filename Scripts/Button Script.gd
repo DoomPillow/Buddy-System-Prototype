@@ -10,7 +10,7 @@ func _ready():
 
 func _toggle(body):
 	
-	if body is PlayerChar:
+	if body is PlayerChar || body is Box:
 	
 		image.animation = "On" if !active else "Off";
 		$"Button Collider".position.y = 3 if !active else -1;
@@ -19,7 +19,7 @@ func _toggle(body):
 	pass
 
 func _green_toggle(body):
-	if body is PlayerChar && type == 1:
+	if ( body is PlayerChar || body is Box ) && type == 1:
 	
 		image.animation = "On" if !active else "Off";
 		$"Button Collider".position.y = 3 if !active else -1;
