@@ -10,8 +10,8 @@
 - Added parallax backgrounds
 - Created levels 1-4
 - Added Player movement + abilities
-- Co-op Controls (WASD and Arrow Keys)
-- Main game objects; red/green buttons, boxes, moving platforms, doors.
-- Loading between scenes via exit.
+- Implimented Co-op Controls (WASD and Arrow Keys)
+- Created main game objects; red/green buttons, boxes, moving platforms, doors.
+- Added loading between scenes via exit.
 - Added clouds visual effect.
 - Main menu GUI created. Functionality is upcoming.
