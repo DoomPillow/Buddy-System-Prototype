@@ -7,6 +7,7 @@
 
 <h2>Changelog</h2>
 
+v0.5.0
 - Added parallax backgrounds
 - Created levels 1-4
 - Added Player movement + abilities
