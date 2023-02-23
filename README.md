@@ -13,4 +13,4 @@
 - Co-op Controls (WASD and Arrow Keys)
 - Main game objects; red/green buttons, boxes, moving platforms, doors.
 - Added clouds visual effect.
-- Main menu GUI created. Functionality is yet to be added.
+- Main menu GUI created. Functionality is upcoming.
