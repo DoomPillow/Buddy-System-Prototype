@@ -12,5 +12,6 @@
 - Added Player movement + abilities
 - Co-op Controls (WASD and Arrow Keys)
 - Main game objects; red/green buttons, boxes, moving platforms, doors.
+- Loading between scenes via exit.
 - Added clouds visual effect.
 - Main menu GUI created. Functionality is upcoming.
