@@ -12,14 +12,15 @@
 
 <h4>Additions</h4>
 
-- Increased speed of boxes
+- Increased speed of boxes.
 - Slowed down / decreased number of clouds.
-- Replaced green button with red on level 5
-- Added level reset button
+- Replaced green button with red on level 5.
+- Added level reset button.
 
 <h4>Bug Fixes</h4>
 
-- Fixed softlock on level 3
+- Fixed softlock on level 3.
+- Fixed issue with moving platforms pushing players when inactive.
 </details>
 
 
