@@ -6,12 +6,21 @@
 
 <h2>Changelog</h2>
 
-v0.5.0
+<h3>v0.5.0</h3>
+
+<h4>Additions</h4>
+
 - Added parallax backgrounds
-- Created levels 1-4
-- Added Player movement + abilities
+- Created levels 1-4.
+- Added Player movement + abilities.
 - Implimented Co-op Controls (WASD and Arrow Keys)
 - Created main game objects; red/green buttons, boxes, moving platforms, doors.
 - Added loading between scenes via exit.
 - Added clouds visual effect.
 - Main menu GUI created. Functionality is upcoming.
+
+<h4>Bug Fixes</h4>
+
+- Fixed objects not moving with a moving platform.
+- Players and boxes no longer need to be directly at the center of P1 to be bounced.
+- Fixed exits triggering after colliding with only one player.
