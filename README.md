@@ -4,9 +4,10 @@
 [![Drive](https://img.shields.io/badge/Google%20Drive-Sprites-4f88d9?style=flat&logo=googledrive&logoColor=4f88d9)](https://drive.google.com/drive/folders/1dFVxvpVcE2ASSKxN3ZY_Zmdh2MrkL-_U)
 [![Figma](https://img.shields.io/badge/Figma-Journey%20Map-red?style=flat&logo=figma)](https://www.figma.com/file/KajRMObt9qnlSC2TYpN17P/Untitled?node-id=0%3A1&t=27denNF0DfeVXQKb-1)
 
-<h2>Changelog</h2>
 
-<h3>v0.5.0</h3>
+<h2>Changelog</h2>
+<details>
+<summary><h3>v0.5.0</h3></summary>
 
 <h4>Additions</h4>
 
@@ -24,3 +25,4 @@
 - Fixed objects not moving with a moving platform.
 - Players and boxes no longer need to be directly at the center of P1 to be bounced.
 - Fixed exits triggering after colliding with only one player.
+</details>
