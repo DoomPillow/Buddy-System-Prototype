@@ -16,6 +16,7 @@
 - Slowed down / decreased number of clouds.
 - Replaced green button with red on level 5.
 - Added level reset button.
+- Moved box in level 4 to below the bridge.
 
 <h4>Bug Fixes</h4>
 
