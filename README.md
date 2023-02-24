@@ -1,8 +1,7 @@
 # Buddy-System-Prototype v0.5.0
 
-[Trello Link](https://trello.com/b/uMhBe6WG/test-client) 
-
-[Sprites: Google Drive](https://drive.google.com/drive/folders/1dFVxvpVcE2ASSKxN3ZY_Zmdh2MrkL-_U)
+[![Trello](https://img.shields.io/badge/Trello-Buddy%20System-brightgreen?style=plastic&logo=trello&logoColor=brightgreen)](https://trello.com/b/uMhBe6WG/test-client) 
+[![Drive](https://img.shields.io/badge/Google%20Drive-Sprites-4f88d9?style=plastic&logo=googledrive&logoColor=39d1ff)](https://drive.google.com/drive/folders/1dFVxvpVcE2ASSKxN3ZY_Zmdh2MrkL-_U)
 
 
 <h2>Changelog</h2>
