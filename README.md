@@ -8,7 +8,7 @@
 <h2>Changelog</h2>
 
 <details>
-<summary><h3>v0.x.x</h3></summary>
+<summary><b>v0.x.x</b></summary>
 
 <h4>Additions</h4>
 
@@ -24,7 +24,7 @@
 
 
 <details>
-<summary><h3>v0.5.0</h3></summary>
+<summary><b>v0.5.0</b></summary>
 
 <h4>Additions</h4>
 
