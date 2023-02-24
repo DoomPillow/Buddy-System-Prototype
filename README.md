@@ -7,6 +7,22 @@
 
 <h2>Changelog</h2>
 <details>
+
+<summary><h3>v0.x.x</h3></summary>
+
+<h4>Additions</h4>
+
+- Increased speed of boxes
+- Slowed down / decreased number of clouds.
+- Replaced green button with red on level 5
+- Added level reset button
+
+<h4>Bug Fixes</h4>
+
+- Fixed softlock on level 3
+
+</details>
+
 <summary><h3>v0.5.0</h3></summary>
 
 <h4>Additions</h4>
