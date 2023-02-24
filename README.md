@@ -21,6 +21,7 @@
 
 - Fixed softlock on level 3.
 - Fixed issue with moving platforms pushing players when inactive.
+- Clouds no longer appear in front of everything on level 4.
 </details>
 
 
