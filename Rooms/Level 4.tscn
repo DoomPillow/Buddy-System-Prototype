@@ -121,7 +121,7 @@ rotation = 1.56257
 scale = Vector2( 0.500013, 0.999994 )
 
 [node name="Box" parent="." instance=ExtResource( 3 )]
-position = Vector2( 763, 218 )
+position = Vector2( 812, 450 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 80, 398 )
@@ -132,6 +132,3 @@ _PlayerChar = "CIRCLE"
 ControlScheme = "arrows"
 
 [node name="Camera" parent="." instance=ExtResource( 6 )]
-
-[node name="Clouds" parent="." instance=ExtResource( 8 )]
-position = Vector2( 567, 123 )

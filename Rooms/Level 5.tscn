@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Objects/Moving Platform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/Red Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Red Button.tscn" type="PackedScene" id=10]
 
 [node name="Main Scene" type="Node2D"]
 position = Vector2( -31, 12 )
@@ -93,7 +95,9 @@ polygon = PoolVector2Array( 456, 368, 451, 502, 465, 504, 467, 369 )
 [node name="Moving Platform" parent="." instance=ExtResource( 1 )]
 position = Vector2( 546, 466 )
 active = true
-speed = 50.0
+pauses = true
+speed = 90.0
+uses_button = true
 
 [node name="Zipper" parent="Moving Platform" index="0"]
 rotation = 1.58038
@@ -132,18 +136,21 @@ position = Vector2( -222, -5 )
 [node name="END POS" parent="Moving Platform" index="3"]
 position = Vector2( 200, -5 )
 
+[node name="Button" parent="Moving Platform" instance=ExtResource( 10 )]
+position = Vector2( -456, -32 )
+
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 80, 398 )
+position = Vector2( 164, 448 )
 
 [node name="Player2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 111, 398 )
+position = Vector2( 204, 448 )
 _PlayerChar = "CIRCLE"
 ControlScheme = "arrows"
 
 [node name="Camera" parent="." instance=ExtResource( 2 )]
 
 [node name="Box" parent="." instance=ExtResource( 3 )]
-position = Vector2( 827, 446 )
+position = Vector2( 838, 446 )
 
 [node name="Door" parent="." instance=ExtResource( 6 )]
 position = Vector2( 543, 552 )
@@ -152,17 +159,17 @@ inverse = true
 uses_button = true
 
 [node name="Button" parent="Door" instance=ExtResource( 5 )]
-position = Vector2( -271.607, 43.5281 )
+position = Vector2( -273.579, 46.5474 )
 rotation = -1.5708
 
 [node name="CollisionPolygon2D" parent="Door/Button" index="1"]
 one_way_collision = true
 
-[node name="CollisionShape2D" parent="Door/Button/Area2D" index="0"]
-one_way_collision = true
-
 [node name="Button Collider" parent="Door/Button" index="3"]
 one_way_collision = true
+
+[node name="Exit" parent="." instance=ExtResource( 9 )]
+position = Vector2( 935, 453 )
 
 [editable path="Moving Platform"]
 [editable path="Door/Button"]

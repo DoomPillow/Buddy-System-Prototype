@@ -3,7 +3,7 @@
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/titlescreen.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://Sprites/GUI.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/GUI Button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=7]
@@ -26,7 +26,7 @@ __meta__ = {
 [node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Clouds" parent="ParallaxBackground/Clouds" instance=ExtResource( 7 )]
-modulate = Color( 1, 0.921569, 0.854902, 1 )
+modulate = Color( 0.992157, 0.945098, 0.835294, 1 )
 position = Vector2( 501, 93 )
 
 [node name="Parallax 1" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -88,7 +88,6 @@ position = Vector2( 960, 324 )
 [node name="Camera" parent="." instance=ExtResource( 5 )]
 
 [node name="GUI" type="CanvasLayer" parent="."]
-visible = false
 offset = Vector2( 40, 0 )
 scale = Vector2( 1.6, 1.6 )
 transform = Transform2D( 1.6, 0, 0, 1.6, 40, 0 )
@@ -97,7 +96,6 @@ transform = Transform2D( 1.6, 0, 0, 1.6, 40, 0 )
 position = Vector2( 295.5, 165 )
 frames = ExtResource( 4 )
 animation = "Title"
-frame = 2
 playing = true
 
 [node name="Play" parent="GUI" instance=ExtResource( 6 )]
