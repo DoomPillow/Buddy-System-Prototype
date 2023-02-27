@@ -6,6 +6,7 @@
 <details>
 <summary><b>v0.5.8</b></summary>
 <h4>Additions</h4>
+
 - Increased speed of boxes.
 - Slowed down / decreased number of clouds.
 - Replaced green button with red on level 5.
@@ -21,6 +22,7 @@
 <details>
 <summary><b>v0.5.0</b></summary>
 <h4>Additions</h4>
+
 - Added parallax backgrounds
 - Created levels 1-4.
 - Added Player movement + abilities.
