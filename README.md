@@ -10,7 +10,7 @@
 - Increased speed of boxes.
 - Slowed down / decreased number of clouds.
 - Replaced green button with red on level 5.
-- Added level reset button.
+- Added level reset button GUI. Functionality upcoming. 
 - Moved box in level 4 to below the bridge.
 
 <h4>Bug Fixes</h4>
