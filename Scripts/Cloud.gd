@@ -19,8 +19,8 @@ func _process(delta):
 	
 	position.x -= speed * delta;
 	
-	sinevalue += delta;
-	position.y += 30 * delta * sin(sinevalue);
+	sinevalue += delta * 0.7;
+	position.y += 20 * delta * sin(sinevalue);
 	
 	# Loop around
 	if global_position.x < -90:
