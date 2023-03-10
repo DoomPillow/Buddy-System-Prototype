@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
 
 [node name="Main Scene" type="Node2D"]
 position = Vector2( -47, 12 )
@@ -17,7 +17,7 @@ position = Vector2( -47, 12 )
 motion_scale = Vector2( 0, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Sky"]
-frames = ExtResource( 2 )
+frames = ExtResource( 7 )
 animation = "Sky"
 frame = 1
 __meta__ = {
@@ -26,7 +26,7 @@ __meta__ = {
 
 [node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
 
-[node name="Clouds" parent="ParallaxBackground/Clouds" instance=ExtResource( 7 )]
+[node name="Clouds" parent="ParallaxBackground/Clouds" instance=ExtResource( 3 )]
 position = Vector2( 501, 93 )
 
 [node name="Parallax 1" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -34,7 +34,7 @@ motion_scale = Vector2( 0.8, 0.8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Parallax 1"]
 position = Vector2( 414, 233 )
-frames = ExtResource( 2 )
+frames = ExtResource( 7 )
 animation = "Parallax 1"
 frame = 1
 
@@ -46,7 +46,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Background"]
 position = Vector2( 450, 260 )
-frames = ExtResource( 2 )
+frames = ExtResource( 7 )
 animation = "Background"
 frame = 1
 __meta__ = {
@@ -60,7 +60,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Ground"]
 position = Vector2( 500, 296 )
-frames = ExtResource( 2 )
+frames = ExtResource( 7 )
 animation = "Ground"
 frame = 1
 __meta__ = {
@@ -86,22 +86,22 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Door" parent="." instance=ExtResource( 4 )]
+[node name="Door" parent="." instance=ExtResource( 1 )]
 position = Vector2( 524, 323 )
 uses_button = true
 
-[node name="Button" parent="Door" instance=ExtResource( 6 )]
+[node name="Button" parent="Door" instance=ExtResource( 2 )]
 position = Vector2( 196, 36 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 164, 321 )
 
-[node name="Player2" parent="." instance=ExtResource( 1 )]
+[node name="Player2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 212, 339 )
 _PlayerChar = "CIRCLE"
 ControlScheme = "arrows"
 
-[node name="Exit" parent="." instance=ExtResource( 3 )]
+[node name="Exit" parent="." instance=ExtResource( 5 )]
 position = Vector2( 962, 366 )
 
-[node name="Camera" parent="." instance=ExtResource( 5 )]
+[node name="Camera" parent="." instance=ExtResource( 6 )]

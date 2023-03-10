@@ -88,6 +88,7 @@ position = Vector2( 960, 324 )
 [node name="Camera" parent="." instance=ExtResource( 5 )]
 
 [node name="GUI" type="CanvasLayer" parent="."]
+visible = false
 offset = Vector2( 40, 0 )
 scale = Vector2( 1.6, 1.6 )
 transform = Transform2D( 1.6, 0, 0, 1.6, 40, 0 )
@@ -96,6 +97,7 @@ transform = Transform2D( 1.6, 0, 0, 1.6, 40, 0 )
 position = Vector2( 295.5, 165 )
 frames = ExtResource( 4 )
 animation = "Title"
+frame = 3
 playing = true
 
 [node name="Play" parent="GUI" instance=ExtResource( 6 )]
