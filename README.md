@@ -6,7 +6,7 @@
 <details>
 <summary><b>v0.x.x</b></summary>
 <h4>Additions</h4>
-
+- WIP extending borders of levels
 - Added wip level 6 
 - Changed both buttons to default to name 'Button'
 
