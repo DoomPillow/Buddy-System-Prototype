@@ -7,9 +7,10 @@
 <summary><b>v0.x.x</b></summary>
 <h4>Additions</h4>
   
-- WIP extending borders of levels
+- Extended borders of levels
 - Added wip level 6 
 - Changed both buttons to default to name 'Button'
+- Added greyscale shader for pause menu
 
 <h4>Bug Fixes</h4>
 
