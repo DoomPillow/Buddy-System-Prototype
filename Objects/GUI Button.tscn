@@ -7,13 +7,16 @@
 extents = Vector2( 62, 34.75 )
 
 [node name="GUI Button" type="AnimatedSprite"]
+pause_mode = 2
 frames = ExtResource( 2 )
 animation = "Play"
 script = ExtResource( 1 )
 
 [node name="Area" type="Area2D" parent="."]
+pause_mode = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+pause_mode = 2
 position = Vector2( 3, -11.75 )
 shape = SubResource( 1 )
 
