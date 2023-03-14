@@ -5,89 +5,89 @@
 [ext_resource path="res://Sprites/Room Sprites/Levels Parallax 1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Room Sprites/Levels Background.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 1000, 600 )
+region = Rect2( 0, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 4 )
-region = Rect2( 1000, 0, 1000, 600 )
+region = Rect2( 1100, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 4 )
-region = Rect2( 2000, 0, 1000, 600 )
+region = Rect2( 2200, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 4 )
-region = Rect2( 3000, 0, 1000, 600 )
+region = Rect2( 3300, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 4 )
-region = Rect2( 4000, 0, 1000, 600 )
+region = Rect2( 4400, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 4 )
-region = Rect2( 5000, 0, 1000, 600 )
+region = Rect2( 5500, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 4 )
-region = Rect2( 6000, 0, 1000, 600 )
+region = Rect2( 6600, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 1000, 600 )
+region = Rect2( 0, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 2 )
-region = Rect2( 1000, 0, 1000, 600 )
+region = Rect2( 1100, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 2 )
-region = Rect2( 2000, 0, 1000, 600 )
+region = Rect2( 2200, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 2 )
-region = Rect2( 3000, 0, 1000, 600 )
+region = Rect2( 3300, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 2 )
-region = Rect2( 4000, 0, 1000, 600 )
+region = Rect2( 4400, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 2 )
-region = Rect2( 5000, 0, 1000, 600 )
+region = Rect2( 5500, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 2 )
-region = Rect2( 6000, 0, 1000, 600 )
+region = Rect2( 6600, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 1000, 600 )
+region = Rect2( 0, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 3 )
-region = Rect2( 1000, 0, 1000, 600 )
+region = Rect2( 1100, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 3 )
-region = Rect2( 2000, 0, 1000, 600 )
+region = Rect2( 2200, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 3 )
-region = Rect2( 3000, 0, 1000, 600 )
+region = Rect2( 3300, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 3 )
-region = Rect2( 4000, 0, 1000, 600 )
+region = Rect2( 4400, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 3 )
-region = Rect2( 5000, 0, 1000, 600 )
+region = Rect2( 5500, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 3 )
-region = Rect2( 6000, 0, 1000, 600 )
+region = Rect2( 6600, 0, 1100, 700 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
@@ -119,17 +119,17 @@ region = Rect2( 6000, 0, 1000, 600 )
 
 [resource]
 animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
 "loop": true,
 "name": "Background",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
 "loop": true,
 "name": "Ground",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ) ],
 "loop": true,
 "name": "Parallax 1",
 "speed": 5.0
