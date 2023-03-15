@@ -1,7 +1,8 @@
 extends Camera2D
 
 var origin = position;
-onready var greyscale = $'CanvasLayer/ColorRect'
+onready var menu = $"CanvasLayer/Pause Menu"
+onready var filter = $"CanvasLayer/ColorRect"
 
 func _process(delta):
 	
@@ -16,4 +17,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		
 		get_tree().paused = !get_tree().paused
-		greyscale.visible = !greyscale.visible
+		menu.visible = !menu.visible
+	
+	if menu.visible:
+		filter.modulate.a = lerp(filter.modulate.a, 1, 0.5)
+	else:
+		filter.modulate.a = lerp(filter.modulate.a, 0, 0.5)

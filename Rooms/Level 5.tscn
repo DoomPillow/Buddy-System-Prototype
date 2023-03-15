@@ -75,10 +75,10 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( -43, 498, -8, 502, 67, 504, 117, 504, 143, 503, 168, 508, 177, 520, 179, 545, 183, 607, 184, 637, -63, 667 )
+polygon = PoolVector2Array( -92, 497, -8, 502, 67, 504, 117, 504, 143, 503, 168, 508, 177, 520, 179, 545, 183, 607, 184, 637, 124, 687, -96, 687 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 704, 509, 706, 540, 711, 594, 707, 639, 961, 694, 955, 504, 917, 505, 877, 506, 821, 509, 766, 502, 731, 506 )
+polygon = PoolVector2Array( 704, 509, 706, 540, 711, 594, 707, 639, 773, 688, 1006, 687, 1007, 501, 941, 509, 877, 506, 821, 509, 766, 502, 731, 506 )
 
 [node name="Platform1" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 623, 351, 623, 357, 598, 364, 511, 364, 465, 366, 441, 364, 419, 368, 371, 363, 365, 356, 370, 346, 415, 347, 446, 344, 494, 347, 546, 347, 602, 346 )

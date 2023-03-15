@@ -97,8 +97,6 @@ func _physics_process(delta):
 	else: 
 		Global.playerpos_2 = position;
 	
-	print(image.frame);
-	
 	# Check if onfloor using Raycast
 	var raycast = get_world_2d().direct_space_state.intersect_ray(global_position,global_position + Vector2(0,10),[self]);
 	onfloor = raycast.size() != 0;
@@ -122,6 +120,10 @@ func _physics_process(delta):
 	# Push
 	push.x = lerp(push.x,0,0.4);
 	push.y = lerp(push.y,0,0.4);
+	
+	# Clamp position
+	global_position.x = clamp(global_position.x,0,980)
+	global_position.y = clamp(global_position.y,0,1000)
 	
 	### ABILITIES	
 	if _PlayerChar == "CIRCLE":
