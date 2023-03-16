@@ -13,7 +13,9 @@ func _process(delta):
 	if hovered && Input.is_action_just_released("ui_accept"):
 		match(animation):
 			"Play":
-				pass
+				get_tree().change_scene(str("res://Rooms/Level ", Global.currentlevel+1, ".tscn"));
+				print("warping to level ", Global.currentlevel+1);
+				Global.currentlevel += 1;
 			"Options":
 				pass
 			"Exit":
