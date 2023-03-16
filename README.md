@@ -27,3 +27,27 @@
 <details>
 <summary><b>v0.5.8</b></summary>
 <h4>Additions</h4>
+
+- Increased speed of boxes.
+- Slowed down / decreased number of clouds.
+- Replaced green button with red on level 5.
+- Added level reset button GUI. Functionality upcoming. 
+- Moved box in level 4 to below the bridge.
+
+<h4>Bug Fixes</h4>
+
+- Fixed issue with moving platforms pushing players when inactive.
+- Clouds no longer appear in front of everything on level 4.
+</details>
+<details>
+<summary><b>v0.5.0</b></summary>
+<h4>Additions</h4>
+
+- Added parallax backgrounds
+- Created levels 1-4.
+- Added Player movement + abilities.
+- Implimented Co-op Controls (WASD and Arrow Keys)
+- Created main game objects; red/green buttons, boxes, moving platforms, doors.
+- Added loading between scenes via exit.
+- Added clouds visual effect.
+- Main menu GUI created. Functionality is upcoming.
