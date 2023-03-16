@@ -14,6 +14,10 @@
 - Added pause menu buttons
 - Added reset button functionality
 - Swapped levels 1 and 3
+  
+- Added next level key back (H key)
+- Added funtionality to play button on main menu (goes to first level)
+
 
 <h4>Bug Fixes</h4>
 
@@ -23,6 +27,3 @@
 <details>
 <summary><b>v0.5.8</b></summary>
 <h4>Additions</h4>
-
-- Added next level key back (H key)
-- Added funtionality to play button on main menu (goes to first level)
