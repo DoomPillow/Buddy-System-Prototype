@@ -3,7 +3,7 @@
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/titlescreen.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://Sprites/GUI.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/GUI Button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=7]
@@ -26,7 +26,7 @@ __meta__ = {
 [node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Clouds" parent="ParallaxBackground/Clouds" instance=ExtResource( 7 )]
-modulate = Color( 1, 0.921569, 0.854902, 1 )
+modulate = Color( 0.992157, 0.945098, 0.835294, 1 )
 position = Vector2( 501, 93 )
 
 [node name="Parallax 1" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -72,7 +72,7 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 957, 380, 904, 381, 871, 376, 821, 383, 772, 381, 721, 377, 675, 381, 632, 381, 596, 387, 557, 381, 509, 377, 453, 381, 445, 389, 438, 428, 434, 466, 434, 512, 447, 522, 465, 532, 473, 549, 473, 561, 480, 562, 487, 554, 494, 563, 496, 583, 497, 606, 506, 610, 509, 644, 957, 639 )
+polygon = PoolVector2Array( 957, 380, 871, 376, 821, 383, 721, 377, 632, 381, 596, 387, 509, 377, 453, 381, 445, 389, 434, 466, 434, 512, 487, 554, 496, 583, 506, 610, 523, 680, 1005, 687, 1006, 373 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 553, 319 )
@@ -88,17 +88,17 @@ position = Vector2( 960, 324 )
 [node name="Camera" parent="." instance=ExtResource( 5 )]
 
 [node name="GUI" type="CanvasLayer" parent="."]
-visible = false
 offset = Vector2( 40, 0 )
 scale = Vector2( 1.6, 1.6 )
 transform = Transform2D( 1.6, 0, 0, 1.6, 40, 0 )
 
 [node name="Title" type="AnimatedSprite" parent="GUI"]
-position = Vector2( 295.5, 165 )
+position = Vector2( 288.125, 226.875 )
 frames = ExtResource( 4 )
 animation = "Title"
 frame = 2
 playing = true
+offset = Vector2( 7.37503, -61.875 )
 
 [node name="Play" parent="GUI" instance=ExtResource( 6 )]
 position = Vector2( 250, 348.125 )

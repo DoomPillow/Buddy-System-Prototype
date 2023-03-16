@@ -5,7 +5,7 @@ var velocity = Vector2();
 var push = Vector2();
 var grv = 1200;
 
-export var pushspeed = 3500;
+export var pushspeed = 4500;
 
 onready var pushzone = $"Push Zone";
 
