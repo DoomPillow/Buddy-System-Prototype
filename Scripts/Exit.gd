@@ -9,7 +9,7 @@ func _ready():
 
 func _process(delta):
 	
-	if zone.get_overlapping_bodies().size() == 2:
+	if zone.get_overlapping_bodies().size() == 2 || Input.is_action_just_pressed("next_level"):
 		#str("Level ", Global.currentlevel + 1)
 		get_tree().change_scene(str("res://Rooms/Level ", Global.currentlevel+1, ".tscn"));
 		print("warping to level ", Global.currentlevel+1);
