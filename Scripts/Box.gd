@@ -26,6 +26,9 @@ func _process(delta):
 			else:
 				velocity.x = -pushspeed * sign(body.global_position.x - global_position.x) * delta;
 			
+		elif body.is_in_group('buttongroup'):
+			position.y -= 5;
+			position.x += sign(body.position.x - position.x);
 		else:
 			velocity.x = lerp(velocity.x, 0, 0.2);
 		

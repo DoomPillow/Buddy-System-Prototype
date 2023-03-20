@@ -90,11 +90,11 @@ one_way_collision = true
 
 [node name="platform1" type="CollisionPolygon2D" parent="Ground"]
 position = Vector2( -1, 2 )
-polygon = PoolVector2Array( 78, 382, 17, 386, -24, 385, -41, 383, -41, 375, -3, 372, 13.8683, 371.709, 55, 371, 82, 372 )
+polygon = PoolVector2Array( 78, 382, 17, 386, -24, 385, -41, 383, -41, 375, -38, 370, -4, 374, 29, 373, 55, 371, 82, 372 )
 one_way_collision = true
 
 [node name="platform3" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 18, 453, 7, 455, -66, 458, -65, 442, -18, 442, 9, 442, 17, 446 )
+polygon = PoolVector2Array( 18, 453, 7, 455, -66, 458, -65, 442, -19, 439, 14, 440, 20, 447 )
 one_way_collision = true
 
 [node name="Doors" type="Node" parent="."]

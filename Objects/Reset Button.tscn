@@ -6,5 +6,6 @@
 [node name="Reset Button" type="AnimatedSprite"]
 frames = ExtResource( 2 )
 animation = "Reset"
+frame = 4
 playing = true
 script = ExtResource( 1 )
