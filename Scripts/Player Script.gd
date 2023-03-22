@@ -47,7 +47,7 @@ func _ready():
 func get_input() -> Array:
 	
 	# Create local input variables
-	var _xinput = int(Input.is_action_pressed("local_right_" + ControlScheme)) - int(Input.is_action_pressed("local_left_" + ControlScheme));
+	var _xinput = int(Input.is_action_pressed("local_right_" + ControlScheme)) - int(Input.is_action_pressed("local_left_" + ControlScheme)) if not (_PlayerChar == "SQUARE" && using_ability) else 0;
 	var _yinput = int(Input.is_action_pressed("local_up_" + ControlScheme));
 	var _isability = int(Input.is_action_pressed("local_ability_" + ControlScheme));
 	

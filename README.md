@@ -7,6 +7,19 @@
 <summary><b>v0.6.0</b></summary>
 <h4>Additions</h4>
   
+- Added ravine in level 4
+- Added box dropper thing in level 4
+- Added cloud with input info on level 2
+
+<h4>Bug Fixes</h4>
+
+- Fixed unintended solution for level 4
+
+</details>
+<details>
+<summary><b>v0.6.0</b></summary>
+<h4>Additions</h4>
+  
 - Extended borders of levels
 - Added wip level 6 
 - Changed both buttons to default to name 'Button'

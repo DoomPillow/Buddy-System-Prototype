@@ -73,18 +73,10 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( -92, 461, 24, 457, 47, 460, 109, 461, 179, 459, 233, 457, 257, 440, 268, 411, 295, 392, 330, 389, 471, 391, 682, 388, 711, 391, 745, 393, 767, 394, 795, 391, 817, 389, 887, 385, 1006, 393, 1005, 684, -95, 689 )
+polygon = PoolVector2Array( -92, 461, 24, 457, 47, 460, 109, 461, 179, 459, 189, 459, 202, 458, 226, 443, 259, 413, 280, 396, 309, 388, 330, 389, 471, 391, 682, 388, 711, 391, 745, 393, 767, 394, 795, 391, 817, 389, 887, 385, 1006, 393, 1005, 684, -95, 689 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
 polygon = PoolVector2Array( 271, 36, 272, 111, 270, 121, 270, 147, 282, 169, 395, 171, 465, 174, 604, 174, 723, 169, 755, 163, 758, 145, 763, 36 )
-
-[node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 80, 398 )
-
-[node name="Player2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 111, 398 )
-_PlayerChar = "CIRCLE"
-ControlScheme = "arrows"
 
 [node name="Door2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 720, 295 )
@@ -103,6 +95,14 @@ uses_button = true
 
 [node name="Button" parent="Door" instance=ExtResource( 1 )]
 position = Vector2( -268, 98 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 80, 398 )
+
+[node name="Player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 111, 398 )
+_PlayerChar = "CIRCLE"
+ControlScheme = "arrows"
 
 [node name="Box" parent="." instance=ExtResource( 3 )]
 position = Vector2( 818, 343 )

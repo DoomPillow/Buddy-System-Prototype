@@ -4,6 +4,9 @@ var origin = position;
 onready var menu = $"CanvasLayer/Pause Menu"
 onready var filter = $"CanvasLayer/ColorRect"
 
+func _ready():
+	filter.visible = true;
+
 func _process(delta):
 	
 	# Easy Pause var

@@ -43,7 +43,7 @@ visible = false
 position = Vector2( 995, 263 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 5 )
-frame = 1
+frame = 2
 playing = true
 
 [node name="Resume" type="AnimatedSprite" parent="CanvasLayer/Pause Menu"]

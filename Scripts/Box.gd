@@ -8,6 +8,7 @@ var grv = 1200;
 export var pushspeed = 4500;
 
 onready var pushzone = $"Push Zone";
+onready var gripbox = $"grippy";
 
 func _process(delta):
 	
