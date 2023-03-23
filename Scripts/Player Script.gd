@@ -91,7 +91,14 @@ func move(xinput,yinput,delta):
 
 func _physics_process(delta):
 	
-	# Adjust gloabal positions
+	# AAAAAAAAAGGGGGGHHHHHH!!!!!
+	velocity.y = min(velocity.y,3200)
+	if global_position.y > 999:
+		print('boog')
+		global_position.y -= 10000
+	
+	
+	# Adjust global positions
 	if _PlayerChar == "SQUARE":
 		Global.playerpos_1 = position;
 	else: 

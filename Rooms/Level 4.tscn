@@ -105,11 +105,13 @@ position = Vector2( 868, 281 )
 polygon = PoolVector2Array( -93, 494, -57, 497, 94, 498, 209, 504, 341, 505, 323, 542, 341, 585, 317, 625, 321, 641, 299, 673, 303, 687, -98, 689 )
 
 [node name="Door" parent="." instance=ExtResource( 2 )]
-position = Vector2( 890, 182 )
+position = Vector2( 890, 160 )
+scale = Vector2( 1, 1.5 )
 uses_button = true
 
 [node name="Button" parent="Door" instance=ExtResource( 1 )]
-position = Vector2( -424, 31 )
+position = Vector2( -431, 32.6667 )
+scale = Vector2( 1, 0.75 )
 
 [node name="Door2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 656, 237 )
