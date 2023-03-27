@@ -92,11 +92,16 @@ func move(xinput,yinput,delta):
 func _physics_process(delta):
 	
 	# AAAAAAAAAGGGGGGHHHHHH!!!!!
-	if Global.currentlevel == 0:
-		velocity.y = min(velocity.y,3200)
-		if global_position.y > 999:
+	velocity.y = min(velocity.y,3200)
+	if global_position.y > 620:
+		if Global.currentlevel == 0:
 			print('boog')
 			global_position.y -= 10000
+		else:
+			if $Ghost.ogpos == Vector2(0,0):
+				$Ghost.ogpos = global_position
+			$Ghost.active = true;
+			
 	
 	
 	# Adjust global positions
