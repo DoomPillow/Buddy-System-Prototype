@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Box.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Mouse Cursor.tscn" type="PackedScene" id=9]
 
 [node name="Main Scene" type="Node2D"]
 position = Vector2( -31, 12 )
@@ -157,3 +158,5 @@ collision_mask = 0
 [node name="grate" type="CollisionPolygon2D" parent="grate"]
 position = Vector2( 88, -52 )
 polygon = PoolVector2Array( 352, 399, 351, 506, 368, 504, 367, 401 )
+
+[node name="Mouse Cursor" parent="." instance=ExtResource( 9 )]

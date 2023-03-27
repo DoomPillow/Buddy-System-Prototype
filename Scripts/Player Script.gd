@@ -92,10 +92,11 @@ func move(xinput,yinput,delta):
 func _physics_process(delta):
 	
 	# AAAAAAAAAGGGGGGHHHHHH!!!!!
-	velocity.y = min(velocity.y,3200)
-	if global_position.y > 999:
-		print('boog')
-		global_position.y -= 10000
+	if Global.currentlevel == 0:
+		velocity.y = min(velocity.y,3200)
+		if global_position.y > 999:
+			print('boog')
+			global_position.y -= 10000
 	
 	
 	# Adjust global positions

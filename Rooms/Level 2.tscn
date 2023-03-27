@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
 [ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Mouse Cursor.tscn" type="PackedScene" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.5, 30 )
@@ -136,5 +137,7 @@ ControlScheme = "arrows"
 position = Vector2( 926, 179 )
 
 [node name="Camera" parent="." instance=ExtResource( 8 )]
+
+[node name="Mouse Cursor" parent="." instance=ExtResource( 10 )]
 
 [editable path="Moving Platform"]

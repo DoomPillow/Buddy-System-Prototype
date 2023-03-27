@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/cursor.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Scripts/Mouse Cursor.gd" type="Script" id=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 0, 0 )
+
+[node name="Mouse Cursor" type="AnimatedSprite" parent="."]
+pause_mode = 2
+position = Vector2( 17, 22 )
+z_as_relative = false
+frames = ExtResource( 1 )
+frame = 4
+playing = true
+script = ExtResource( 2 )
+
+[connection signal="animation_finished" from="Mouse Cursor" to="Mouse Cursor" method="_anim_done"]
