@@ -4,6 +4,13 @@
 [![Figma](https://img.shields.io/badge/Figma-Journey%20Map-red?style=flat&logo=figma)](https://www.figma.com/file/KajRMObt9qnlSC2TYpN17P/Untitled?node-id=0%3A1&t=27denNF0DfeVXQKb-1)
 <h2>Changelog</h2>
 <details>
+<summary><b>v0.6.1</b></summary>
+<h4>Bug Fixes</h4>
+
+- Fixed pause menu blur always being visible in 2d view
+
+</details>
+<details>
 <summary><b>v0.6.0</b></summary>
 <h4>Additions</h4>
   
