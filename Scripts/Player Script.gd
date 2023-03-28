@@ -35,6 +35,7 @@ export(String, "wasd","arrows") var ControlScheme = "wasd";
 ### When Created...
 func _ready():
 	
+	$Ghost.animation = _PlayerChar
 	$hitbox.shape = $hitbox.shape.duplicate();
 	
 	if _PlayerChar == "CIRCLE":
@@ -47,7 +48,7 @@ func _ready():
 func get_input() -> Array:
 	
 	# Create local input variables
-	var _xinput = int(Input.is_action_pressed("local_right_" + ControlScheme)) - int(Input.is_action_pressed("local_left_" + ControlScheme));
+	var _xinput = int(Input.is_action_pressed("local_right_" + ControlScheme)) - int(Input.is_action_pressed("local_left_" + ControlScheme)) if not (_PlayerChar == "SQUARE" && using_ability) else 0;
 	var _yinput = int(Input.is_action_pressed("local_up_" + ControlScheme));
 	var _isability = int(Input.is_action_pressed("local_ability_" + ControlScheme));
 	
@@ -91,7 +92,20 @@ func move(xinput,yinput,delta):
 
 func _physics_process(delta):
 	
-	# Adjust gloabal positions
+	# AAAAAAAAAGGGGGGHHHHHH!!!!!
+	velocity.y = min(velocity.y,3200)
+	if global_position.y > 620:
+		if Global.currentlevel == 0:
+			print('boog')
+			global_position.y -= 10000
+		else:
+			if $Ghost.ogpos == Vector2(0,0):
+				$Ghost.ogpos = global_position
+			$Ghost.active = true;
+			
+	
+	
+	# Adjust global positions
 	if _PlayerChar == "SQUARE":
 		Global.playerpos_1 = position;
 	else: 

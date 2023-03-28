@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://Sprites/Animation Images/input_tutorial.png" type="Texture" id=8]
+[ext_resource path="res://Objects/Mouse Cursor.tscn" type="PackedScene" id=9]
 
 [node name="Main Scene" type="Node2D"]
 position = Vector2( -47, 12 )
@@ -81,7 +83,7 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 404, 267, 399, 284, 400, 301, 402, 319, 410, 326, 431, 328, 462, 329, 471, 324, 473, 286, 466, 268, 451, 267, 420, 265 )
+polygon = PoolVector2Array( 401, 230, 399, 284, 400, 301, 402, 319, 410, 326, 431, 328, 462, 329, 471, 324, 475, 284, 480, 251, 478, 226, 443, 220, 411, 224 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -93,6 +95,10 @@ uses_button = true
 [node name="Button" parent="Door" instance=ExtResource( 2 )]
 position = Vector2( 196, 36 )
 
+[node name="InputTutorial" type="Sprite" parent="."]
+position = Vector2( 249, 221 )
+texture = ExtResource( 8 )
+
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 164, 321 )
 
@@ -100,6 +106,8 @@ position = Vector2( 164, 321 )
 position = Vector2( 212, 339 )
 _PlayerChar = "CIRCLE"
 ControlScheme = "arrows"
+
+[node name="Mouse Cursor" parent="." instance=ExtResource( 9 )]
 
 [node name="Exit" parent="." instance=ExtResource( 5 )]
 position = Vector2( 962, 366 )

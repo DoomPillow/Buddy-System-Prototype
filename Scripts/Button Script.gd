@@ -6,6 +6,7 @@ onready var image: AnimatedSprite = $Sprite;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group('buttongroup')
 	pass
 
 func _toggle(body):
