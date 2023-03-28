@@ -24,3 +24,5 @@ shape = SubResource( 1 )
 
 [node name="Ghost" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1, -20 )
+animation = "CIRCLE"
+frame = 5

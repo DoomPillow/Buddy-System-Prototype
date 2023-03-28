@@ -97,7 +97,7 @@ transform = Transform2D( 1.6, 0, 0, 1.6, 40, 0 )
 position = Vector2( 288.125, 226.875 )
 frames = ExtResource( 4 )
 animation = "Title"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 7.37503, -61.875 )
 

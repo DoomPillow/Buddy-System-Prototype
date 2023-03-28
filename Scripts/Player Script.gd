@@ -35,6 +35,7 @@ export(String, "wasd","arrows") var ControlScheme = "wasd";
 ### When Created...
 func _ready():
 	
+	$Ghost.animation = _PlayerChar
 	$hitbox.shape = $hitbox.shape.duplicate();
 	
 	if _PlayerChar == "CIRCLE":

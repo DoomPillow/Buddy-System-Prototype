@@ -6,6 +6,6 @@
 [node name="Player Ghost" type="AnimatedSprite"]
 frames = ExtResource( 1 )
 animation = "circle"
-frame = 2
+frame = 1
 playing = true
 script = ExtResource( 2 )
