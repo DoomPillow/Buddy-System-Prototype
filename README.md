@@ -14,6 +14,7 @@
 <h4>Bug Fixes</h4>
 
 - Fixed unintended solution for level 4
+- Fixed pause menu blur always being visible in 2d view
 
 </details>
 <details>

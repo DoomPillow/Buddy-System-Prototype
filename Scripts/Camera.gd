@@ -5,9 +5,11 @@ onready var menu = $"CanvasLayer/Pause Menu"
 onready var filter = $"CanvasLayer/ColorRect"
 
 func _ready():
+
 	filter.visible = true;
 	if Global.currentlevel != 0:
 		smoothing_enabled = false;
+
 
 func _process(delta):
 	
