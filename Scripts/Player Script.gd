@@ -55,6 +55,7 @@ func get_input() -> Array:
 	# Return current input status
 	return [_xinput,_yinput,_isability];
 
+# warning-ignore:unused_argument
 func move(xinput,yinput,delta):
 	
 	## X movement
@@ -80,11 +81,13 @@ func move(xinput,yinput,delta):
 		
 		pass
 	
-	## Jumping
+	## Jumping and jump sound
 	
 	if yinput && is_on_floor():
 		
 		velocity.y -= jumph;
+		
+		$Jump.play (0.0)
 		
 		pass
 	
