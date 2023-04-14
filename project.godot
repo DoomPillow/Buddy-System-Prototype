@@ -46,6 +46,9 @@ common/drop_mouse_on_gui_input_disabled=true
 texture={
 "flags/filter": false
 }
+mp3={
+"loop": false
+}
 
 [input]
 
@@ -115,7 +118,6 @@ next_level={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":72,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
  ]
 }
-
 clickclack={
 "deadzone": 0.5,
 "events": [  ]
