@@ -1,12 +1,33 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Player Script.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Rectangle Animations.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Objects/player ghost.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Sprites/ghostframes.tres" type="SpriteFrames" id=4]
+[ext_resource path="res://Sprites/Animation Images/flameparticle.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.5, 19 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+direction = Vector3( 0, 1, 1 )
+spread = 87.33
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 60.0
+initial_velocity_random = 0.39
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = -3.96
+scale = 0.1
+scale_random = 0.43
+scale_curve = SubResource( 4 )
 
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 5
@@ -27,7 +48,7 @@ shape = SubResource( 1 )
 modulate = Color( 1, 1, 1, 0.580392 )
 position = Vector2( 1, -20 )
 animation = "CIRCLE"
-frame = 0
+frame = 3
 
 [node name="Meteor" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
@@ -36,3 +57,13 @@ frames = ExtResource( 4 )
 animation = "Meteor"
 frame = 3
 playing = true
+
+[node name="Particles" type="Particles2D" parent="."]
+emitting = false
+amount = 70
+speed_scale = 2.0
+explosiveness = 0.21
+randomness = 0.13
+local_coords = false
+process_material = SubResource( 2 )
+texture = ExtResource( 5 )

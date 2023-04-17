@@ -95,13 +95,16 @@ func _physics_process(delta):
 	# AAAAAAAAAGGGGGGHHHHHH!!!!!
 	velocity.y = min(velocity.y,3000)
 	if velocity.y > 2900:
+		$Particles.emitting = true;
 		$Meteor.modulate.a = lerp($Meteor.modulate.a, 0.7, 0.1);
 	else:
+		$Particles.emitting = false;
 		$Meteor.modulate.a = 0;
 	
 	if global_position.y > 650:
 		if Global.currentlevel == 0:
 			global_position.y -= 10000;
+			global_position.x += rand_range(-10,10);
 		else:
 			if $Ghost.ogpos == Vector2(0,0):
 				$Ghost.ogpos = global_position;
@@ -138,6 +141,8 @@ func _physics_process(delta):
 	# Actually move
 	if image.visible:
 		velocity = move_and_slide(velocity + push,Vector2.UP);
+	else:
+		velocity.y = 0;
 	
 	# Push
 	push.x = lerp(push.x,0,0.4);

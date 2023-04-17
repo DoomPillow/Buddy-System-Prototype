@@ -25,20 +25,21 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -7, 5 )
 frames = ExtResource( 1 )
 animation = "Pie"
+frame = 1
 playing = true
 
 [node name="Players" type="AnimatedSprite" parent="Win Animation"]
 position = Vector2( -9, 13 )
 frames = ExtResource( 1 )
 animation = "Players Idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="Text" type="AnimatedSprite" parent="Win Animation"]
 position = Vector2( 0, 470 )
 frames = ExtResource( 1 )
 animation = "Text"
-frame = 2
+frame = 1
 playing = true
 
 [node name="trans_screen" type="ColorRect" parent="Win Animation"]

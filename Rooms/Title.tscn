@@ -116,13 +116,14 @@ animation = "Exit"
 position = Vector2( 147.25, 629.125 )
 frames = ExtResource( 9 )
 animation = "Rectangle"
-frame = 4
+frame = 3
 playing = true
 
 [node name="Circ Bubble" type="AnimatedSprite" parent="GUI"]
 position = Vector2( 418.5, 624.75 )
 frames = ExtResource( 9 )
 animation = "Circle"
+frame = 4
 playing = true
 
 [node name="Mouse Cursor" parent="." instance=ExtResource( 8 )]

@@ -99,7 +99,7 @@ position = Vector2( 196, 36 )
 position = Vector2( 236, 208 )
 frames = ExtResource( 8 )
 animation = "Bounce"
-frame = 3
+frame = 1
 playing = true
 
 [node name="Player" parent="." instance=ExtResource( 4 )]

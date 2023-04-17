@@ -100,7 +100,7 @@ scale = Vector2( 1, 1.299 )
 uses_button = true
 
 [node name="Button" parent="Door3" instance=ExtResource( 2 )]
-position = Vector2( -20.9999, 11.5474 )
+position = Vector2( -22, 3.84912 )
 rotation = -1.5708
 scale = Vector2( 0.769823, 1 )
 collision_layer = 0
@@ -113,7 +113,7 @@ rotation = 1.5708
 uses_button = true
 
 [node name="Button" parent="Door" instance=ExtResource( 2 )]
-position = Vector2( 460, 41.9984 )
+position = Vector2( 461, 0.998352 )
 rotation = -1.5708
 permstate = true
 
@@ -123,7 +123,7 @@ rotation = 1.5708
 uses_button = true
 
 [node name="Button" parent="Door2" instance=ExtResource( 2 )]
-position = Vector2( 390, 19.9985 )
+position = Vector2( 391, -8.0014 )
 rotation = -1.5708
 permstate = true
 
@@ -175,18 +175,15 @@ grv = -6
 hgrv = -30
 
 [node name="Button2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 329, 437 )
+position = Vector2( 244, 437 )
 
 [node name="Button3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 540, 409 )
+position = Vector2( 546, 408 )
 collision_mask = 0
 
 [node name="Button4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 858, 319 )
 collision_layer = 0
-
-[node name="Button" parent="." instance=ExtResource( 8 )]
-position = Vector2( 689, 365 )
 
 [node name="Treasure Chest" parent="." instance=ExtResource( 10 )]
 position = Vector2( 948, 308 )
@@ -201,6 +198,9 @@ margin_top = -66.0
 margin_right = 3843.0
 margin_bottom = 2562.0
 color = Color( 0.156863, 0.152941, 0.152941, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 107, 436 )

@@ -29,7 +29,6 @@ pause_mode = 2
 [node name="Reset Button" parent="CanvasLayer" instance=ExtResource( 2 )]
 position = Vector2( 118, 85 )
 scale = Vector2( 2, 2 )
-frame = 4
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 pause_mode = 2
@@ -46,7 +45,7 @@ visible = false
 position = Vector2( 1007.46, 318 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 5 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="GUI Button" parent="CanvasLayer/Pause Menu" instance=ExtResource( 6 )]
