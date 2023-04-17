@@ -41,13 +41,13 @@ animation = "Parallax 1"
 frame = 4
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.98, 0.98 )
+motion_scale = Vector2( 0.9, 0.9 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Background"]
-position = Vector2( 496, 296 )
+position = Vector2( 447, 264 )
 frames = ExtResource( 7 )
 animation = "Background"
 frame = 4
@@ -74,69 +74,28 @@ __meta__ = {
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
-position = Vector2( 457, 336 )
-polygon = PoolVector2Array( -48, 170, 94, 171, 334, 168, 342, 153, 339, 106, 336, 31, 328, 24, 232, 21, 204, 20, 198, 8, 200, -31, 201, -49, 234, -59, 295, -58, 373, -57, 401, -60, 549, -62, 551, 351, -17, 350, -14, 336, -22, 316, -23, 304, -18, 292, -32, 261, -21, 243 )
+polygon = PoolVector2Array( -92, 461, 24, 457, 47, 460, 109, 461, 179, 459, 189, 459, 202, 458, 226, 443, 259, 413, 280, 396, 309, 388, 330, 389, 471, 391, 682, 388, 711, 391, 745, 393, 767, 394, 795, 391, 817, 389, 887, 385, 1006, 393, 1005, 684, -95, 689 )
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
-position = Vector2( 457, 336 )
-polygon = PoolVector2Array( 18, 10, 11, 18, -32, 18, -151, 15, -176, 16, -182, 4, -183, -45, -178, -54, -160, -51, -126, -55, -88, -56, -32, -54, 12, -56, 17, -52, 18, -31, 19, -9 )
-
-[node name="Platform1" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 273, 419, 256, 417, 197, 416, 143, 417, 80, 419, 70, 417, 68, 408, 75, 402, 95, 400, 127, 401, 144, 404, 193, 402, 211, 399, 244, 401, 268, 400, 274, 404 )
-one_way_collision = true
-
-[node name="Platform2" type="CollisionPolygon2D" parent="Ground"]
-position = Vector2( 7, -119 )
-polygon = PoolVector2Array( 267, 417, 256, 417, 233, 418, 182, 419, 142, 416, 106, 415, 69, 410, 69, 402, 95, 400, 145, 402, 193, 402, 244, 401, 272, 401, 267, 410 )
-one_way_collision = true
-
-[node name="platform3" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( 145, 463, 128, 469, 104, 470, 94, 467, 85, 466, 87, 455, 99, 455, 112, 458, 127, 456, 140, 456 )
-one_way_collision = true
-
-[node name="platform4" type="CollisionPolygon2D" parent="Ground"]
-position = Vector2( 0, -7 )
-polygon = PoolVector2Array( 240, 365, 222, 363, 209, 356, 210, 348, 231, 348, 247, 348, 259, 350, 258, 359 )
-one_way_collision = true
-
-[node name="Exit" parent="Ground/platform4" instance=ExtResource( 5 )]
-position = Vector2( 868, 281 )
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Ground"]
-polygon = PoolVector2Array( -93, 494, -57, 497, 94, 498, 209, 504, 341, 505, 323, 542, 341, 585, 317, 625, 321, 641, 299, 673, 303, 687, -98, 689 )
-
-[node name="Door" parent="." instance=ExtResource( 2 )]
-position = Vector2( 890, 160 )
-scale = Vector2( 1, 1.5 )
-uses_button = true
-
-[node name="Button" parent="Door" instance=ExtResource( 1 )]
-position = Vector2( -431, 32.6667 )
-scale = Vector2( 1, 0.75 )
+polygon = PoolVector2Array( 271, 36, 272, 111, 270, 121, 270, 147, 282, 169, 395, 171, 465, 174, 604, 174, 723, 169, 755, 163, 758, 145, 763, 36 )
 
 [node name="Door2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 656, 237 )
-rotation = -1.56668
-scale = Vector2( 1, 2 )
+position = Vector2( 720, 295 )
 inverse = true
 uses_button = true
 
 [node name="Button" parent="Door2" instance=ExtResource( 1 )]
-position = Vector2( 26.646, 84.4519 )
-rotation = 1.56257
-scale = Vector2( 0.500013, 0.999994 )
+position = Vector2( -516, 98 )
 
-[node name="Door3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 840, 352 )
-rotation = -1.5708
+[node name="Exit" parent="Door2" instance=ExtResource( 5 )]
+position = Vector2( 210, 39 )
+
+[node name="Door" parent="." instance=ExtResource( 2 )]
+position = Vector2( 472, 295 )
 uses_button = true
 
-[node name="Button" parent="Door3" instance=ExtResource( 1 )]
-position = Vector2( -83, -6.10352e-05 )
-rotation = 1.56257
-
-[node name="Box" parent="." instance=ExtResource( 3 )]
-position = Vector2( 842, 341 )
+[node name="Button" parent="Door" instance=ExtResource( 1 )]
+position = Vector2( -268, 98 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 80, 398 )
@@ -145,6 +104,9 @@ position = Vector2( 80, 398 )
 position = Vector2( 111, 398 )
 _PlayerChar = "CIRCLE"
 ControlScheme = "arrows"
+
+[node name="Box" parent="." instance=ExtResource( 3 )]
+position = Vector2( 818, 343 )
 
 [node name="Camera" parent="." instance=ExtResource( 6 )]
 

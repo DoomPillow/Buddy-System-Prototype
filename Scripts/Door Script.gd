@@ -20,6 +20,7 @@ func _process(delta):
 	hitbox.disabled = true if open else false;
 	
 	if uses_button:
-		open = $Button.active if !inverse else !$Button.active;
+		var _button = get_node("Button") if get_node("Button") != null else get_node("rock/Button") ;
+		open = _button.active if !inverse else !_button.active;
 	
 	pass

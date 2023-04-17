@@ -1,37 +1,45 @@
-[gd_resource type="SpriteFrames" load_steps=33 format=2]
+[gd_resource type="SpriteFrames" load_steps=41 format=2]
 
 [ext_resource path="res://Sprites/Room Sprites/Levels Sky.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Room Sprites/Levels Ground.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Room Sprites/Levels Parallax 1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Room Sprites/Levels Background.png" type="Texture" id=4]
 
-[sub_resource type="AtlasTexture" id=29]
+[sub_resource type="AtlasTexture" id=59]
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=60]
 atlas = ExtResource( 4 )
 region = Rect2( 1100, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=61]
 atlas = ExtResource( 4 )
 region = Rect2( 2200, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=62]
 atlas = ExtResource( 4 )
 region = Rect2( 3300, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=63]
 atlas = ExtResource( 4 )
 region = Rect2( 4400, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=64]
 atlas = ExtResource( 4 )
 region = Rect2( 5500, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 4 )
 region = Rect2( 6600, 0, 1100, 700 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 4 )
+region = Rect2( 7700, 0, 1100, 700 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 4 )
+region = Rect2( 8800, 0, 1100, 700 )
 
 [sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 2 )
@@ -61,80 +69,104 @@ region = Rect2( 5500, 0, 1100, 700 )
 atlas = ExtResource( 2 )
 region = Rect2( 6600, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=43]
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 2 )
+region = Rect2( 7700, 0, 1100, 700 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 2 )
+region = Rect2( 8800, 0, 1100, 700 )
+
+[sub_resource type="AtlasTexture" id=68]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=44]
+[sub_resource type="AtlasTexture" id=69]
 atlas = ExtResource( 3 )
 region = Rect2( 1100, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=45]
+[sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 3 )
 region = Rect2( 2200, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=46]
+[sub_resource type="AtlasTexture" id=71]
 atlas = ExtResource( 3 )
 region = Rect2( 3300, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=47]
+[sub_resource type="AtlasTexture" id=72]
 atlas = ExtResource( 3 )
 region = Rect2( 4400, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=48]
+[sub_resource type="AtlasTexture" id=73]
 atlas = ExtResource( 3 )
 region = Rect2( 5500, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=49]
+[sub_resource type="AtlasTexture" id=74]
 atlas = ExtResource( 3 )
 region = Rect2( 6600, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 1000, 600 )
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 3 )
+region = Rect2( 7700, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=23]
-atlas = ExtResource( 1 )
-region = Rect2( 1000, 0, 1000, 600 )
+[sub_resource type="AtlasTexture" id=76]
+atlas = ExtResource( 3 )
+region = Rect2( 8800, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=77]
 atlas = ExtResource( 1 )
-region = Rect2( 2000, 0, 1000, 600 )
+region = Rect2( 0, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=78]
 atlas = ExtResource( 1 )
-region = Rect2( 3000, 0, 1000, 600 )
+region = Rect2( 1100, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=26]
+[sub_resource type="AtlasTexture" id=79]
 atlas = ExtResource( 1 )
-region = Rect2( 4000, 0, 1000, 600 )
+region = Rect2( 2200, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=27]
+[sub_resource type="AtlasTexture" id=80]
 atlas = ExtResource( 1 )
-region = Rect2( 5000, 0, 1000, 600 )
+region = Rect2( 3300, 0, 1100, 700 )
 
-[sub_resource type="AtlasTexture" id=28]
+[sub_resource type="AtlasTexture" id=81]
 atlas = ExtResource( 1 )
-region = Rect2( 6000, 0, 1000, 600 )
+region = Rect2( 4400, 0, 1100, 700 )
+
+[sub_resource type="AtlasTexture" id=82]
+atlas = ExtResource( 1 )
+region = Rect2( 5500, 0, 1100, 700 )
+
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 1 )
+region = Rect2( 6600, 0, 1100, 700 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 1 )
+region = Rect2( 7700, 0, 1100, 700 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 1 )
+region = Rect2( 8800, 0, 1100, 700 )
 
 [resource]
 animations = [ {
-"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"frames": [ SubResource( 59 ), SubResource( 60 ), SubResource( 61 ), SubResource( 62 ), SubResource( 63 ), SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ) ],
 "loop": true,
 "name": "Background",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ) ],
+"frames": [ SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ), SubResource( 54 ), SubResource( 55 ), SubResource( 56 ), SubResource( 57 ), SubResource( 58 ) ],
 "loop": true,
 "name": "Ground",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ) ],
+"frames": [ SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ), SubResource( 75 ), SubResource( 76 ) ],
 "loop": true,
 "name": "Parallax 1",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"frames": [ SubResource( 77 ), SubResource( 78 ), SubResource( 79 ), SubResource( 80 ), SubResource( 81 ), SubResource( 82 ), SubResource( 83 ), SubResource( 84 ), SubResource( 85 ) ],
 "loop": true,
 "name": "Sky",
 "speed": 5.0
