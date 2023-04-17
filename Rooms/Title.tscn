@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Objects/GUI Button.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/Mouse Cursor.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Sprites/bubbles.tres" type="SpriteFrames" id=9]
 
 [node name="Main Scene" type="Node2D"]
 position = Vector2( -45, 12 )
@@ -94,21 +95,34 @@ scale = Vector2( 1.6, 1.6 )
 transform = Transform2D( 1.6, 0, 0, 1.6, 40, 0 )
 
 [node name="Title" type="AnimatedSprite" parent="GUI"]
-position = Vector2( 288.125, 226.875 )
+position = Vector2( 307.778, 277.694 )
+scale = Vector2( 1.33275, 1.27617 )
 frames = ExtResource( 4 )
 animation = "Title"
+frame = 3
 playing = true
 offset = Vector2( 7.37503, -61.875 )
 
 [node name="Play" parent="GUI" instance=ExtResource( 6 )]
+visible = false
 position = Vector2( 250, 348.125 )
 
 [node name="Options" parent="GUI" instance=ExtResource( 6 )]
-position = Vector2( 253.75, 527.5 )
+visible = false
+position = Vector2( 248.75, 475.625 )
 animation = "Exit"
 
-[node name="Exit" parent="GUI" instance=ExtResource( 6 )]
-position = Vector2( 325, 433.75 )
-animation = "Options"
+[node name="Rect Bubble" type="AnimatedSprite" parent="GUI"]
+position = Vector2( 147.25, 629.125 )
+frames = ExtResource( 9 )
+animation = "Rectangle"
+frame = 4
+playing = true
+
+[node name="Circ Bubble" type="AnimatedSprite" parent="GUI"]
+position = Vector2( 418.5, 624.75 )
+frames = ExtResource( 9 )
+animation = "Circle"
+playing = true
 
 [node name="Mouse Cursor" parent="." instance=ExtResource( 8 )]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprites/Endscreen.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Sprites/Win Animation.tres" type="Animation" id=2]
+[ext_resource path="res://Scripts/Win Animation.gd" type="Script" id=3]
+
+[node name="Win Screen" type="Node2D"]
+
+[node name="Win Animation" type="AnimationPlayer" parent="."]
+method_call_mode = 1
+"anims/New Anim" = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Ground" type="AnimatedSprite" parent="Win Animation"]
+frames = ExtResource( 1 )
+animation = "Ground"
+
+[node name="Chest" type="AnimatedSprite" parent="Win Animation"]
+position = Vector2( 17, 29 )
+frames = ExtResource( 1 )
+animation = "Chest"
+
+[node name="Pie" type="AnimatedSprite" parent="Win Animation"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -7, 5 )
+frames = ExtResource( 1 )
+animation = "Pie"
+playing = true
+
+[node name="Players" type="AnimatedSprite" parent="Win Animation"]
+position = Vector2( -9, 13 )
+frames = ExtResource( 1 )
+animation = "Players Idle"
+frame = 2
+playing = true
+
+[node name="Text" type="AnimatedSprite" parent="Win Animation"]
+position = Vector2( 0, 470 )
+frames = ExtResource( 1 )
+animation = "Text"
+frame = 2
+playing = true
+
+[node name="trans_screen" type="ColorRect" parent="Win Animation"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -579.0
+margin_top = -373.0
+margin_right = 580.0
+margin_bottom = 385.0
+color = Color( 0.156863, 0.152941, 0.152941, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.56, 0.58 )

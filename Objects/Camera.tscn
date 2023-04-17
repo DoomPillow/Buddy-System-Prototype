@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Camera.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Reset Button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Shaders/greyscale_material.tres" type="Material" id=3]
 [ext_resource path="res://Sprites/transition.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://Sprites/pause.tres" type="SpriteFrames" id=5]
+[ext_resource path="res://Objects/GUI Button.tscn" type="PackedScene" id=6]
 
 [node name="Camera" type="Camera2D"]
 pause_mode = 2
@@ -28,6 +29,7 @@ pause_mode = 2
 [node name="Reset Button" parent="CanvasLayer" instance=ExtResource( 2 )]
 position = Vector2( 118, 85 )
 scale = Vector2( 2, 2 )
+frame = 4
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 pause_mode = 2
@@ -41,25 +43,17 @@ rect_scale = Vector2( 2, 2 )
 visible = false
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/Pause Menu"]
-position = Vector2( 995, 263 )
+position = Vector2( 1007.46, 318 )
 scale = Vector2( 2, 2 )
 frames = ExtResource( 5 )
+frame = 2
 playing = true
 
-[node name="Resume" type="AnimatedSprite" parent="CanvasLayer/Pause Menu"]
-position = Vector2( 940, 551 )
+[node name="GUI Button" parent="CanvasLayer/Pause Menu" instance=ExtResource( 6 )]
+position = Vector2( 969, 696 )
 scale = Vector2( 2, 2 )
-frames = ExtResource( 5 )
-animation = "Resume"
 
-[node name="Exit" type="AnimatedSprite" parent="CanvasLayer/Pause Menu"]
-position = Vector2( 976, 915 )
+[node name="GUI Button2" parent="CanvasLayer/Pause Menu" instance=ExtResource( 6 )]
+position = Vector2( 975, 946 )
 scale = Vector2( 2, 2 )
-frames = ExtResource( 5 )
 animation = "Exit"
-
-[node name="Options" type="AnimatedSprite" parent="CanvasLayer/Pause Menu"]
-position = Vector2( 1051, 735 )
-scale = Vector2( 2, 2 )
-frames = ExtResource( 5 )
-animation = "Options"

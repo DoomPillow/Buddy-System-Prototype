@@ -2,6 +2,7 @@ extends StaticBody2D
 
 export(int,"Red","Green") var type = 0;
 export(bool) var active: bool = false;
+export(bool) var permstate = false;
 onready var image: AnimatedSprite = $Sprite;
 
 # Called when the node enters the scene tree for the first time.
@@ -12,10 +13,12 @@ func _ready():
 func _toggle(body):
 	
 	if body is PlayerChar || body is Box:
-	
-		image.animation = "On" if !active else "Off";
-		$"Button Collider".position.y = 3 if !active else -1;
-		active = !active;
+		
+		if permstate == false || (permstate == true && active == false):
+			image.animation = "On" if !active else "Off";
+			$"Button Collider".position.y = 3 if !active else -1;
+		active = !active if permstate == false else true;
+		
 	
 	pass
 
@@ -24,6 +27,7 @@ func _green_toggle(body):
 	
 		image.animation = "On" if !active else "Off";
 		$"Button Collider".position.y = 3 if !active else -1;
+		$"Button Collider".one_way_collision = false;
 		active = !active;
 	
 	pass

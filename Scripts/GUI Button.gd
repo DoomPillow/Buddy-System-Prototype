@@ -8,15 +8,15 @@ func _process(delta):
 	hovered = abs(global_position.x - mousepos.x) < 100 && abs(global_position.y - mousepos.y) < 40
 	
 	frame = 1 if hovered && Input.is_action_pressed("ui_accept") else 0;
-	scale = Vector2(1.03,1.03) if hovered else Vector2(1,1);
+	scale = Vector2(2.03,2.03) if hovered else Vector2(2,2);
 	
 	if hovered && Input.is_action_just_released("ui_accept"):
 		match(animation):
 			"Play":
-				get_tree().change_scene(str("res://Rooms/Level ", Global.currentlevel+1, ".tscn"));
-				print("warping to level ", Global.currentlevel+1);
-				Global.currentlevel += 1;
+				get_tree().paused = !get_tree().paused;
 			"Options":
 				pass
 			"Exit":
-				get_tree().quit();
+				get_tree().change_scene(str("res://Rooms/Title.tscn"));
+				Global.currentlevel = 0;
+				get_tree().paused = !get_tree().paused;

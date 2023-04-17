@@ -21,12 +21,14 @@ func _process(delta):
 		position = lerp(origin,lerp(Global.playerpos_1,Global.playerpos_2,0.25),0.05);
 	
 	# Check for pause toggling
-	if Input.is_action_just_pressed("ui_cancel"):
+	if Input.is_action_just_pressed("ui_cancel") && Global.currentlevel != 0:
 		
 		get_tree().paused = !get_tree().paused
-		menu.visible = !menu.visible
+		
 	
 	if menu.visible:
 		filter.modulate.a = lerp(filter.modulate.a, 1, 0.5)
 	else:
 		filter.modulate.a = lerp(filter.modulate.a, 0, 0.5)
+		
+	menu.visible = _paused;
