@@ -81,6 +81,9 @@ func move(xinput,yinput,delta):
 		
 		pass
 	
+	########if image.animation == "Walking":
+		
+	
 	## Jumping and jump sound
 	
 	if yinput && is_on_floor():

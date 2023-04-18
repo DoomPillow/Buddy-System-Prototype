@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/button-off.mp3-e60dce3b2621c73b013b1a7cb883bdb6.mp3str"
+
+[deps]
+
+source_file="res://Sounds/button-off.mp3"
+dest_files=[ "res://.import/button-off.mp3-e60dce3b2621c73b013b1a7cb883bdb6.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

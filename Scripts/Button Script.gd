@@ -19,9 +19,16 @@ func _toggle(body):
 		$"Button Collider".position.y = 3 if !active else -1;
 		active = !active;
 		
-		$ButtonSound.play (0.0)
+		if active:
+			$ButtonOn.play (0.0);
+		else:
+			$ButtonOff.play (0.0);
+	
+			
 	
 	pass
+	
+	
 
 func _green_toggle(body):
 	if ( body is PlayerChar || body is Box ) && type == 1:
@@ -29,6 +36,11 @@ func _green_toggle(body):
 		image.animation = "On" if !active else "Off";
 		$"Button Collider".position.y = 3 if !active else -1;
 		active = !active;
+		
+		if active:
+			$ButtonOn.play (0.0);
+		else:
+			$ButtonOff.play (0.0);
 	
 	pass
 

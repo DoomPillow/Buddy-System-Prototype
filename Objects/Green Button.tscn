@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprites/Green Button Animations.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Scripts/Button Script.gd" type="Script" id=2]
 [ext_resource path="res://Sounds/button.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/button-off.mp3" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14.5, 5 )
@@ -31,8 +32,11 @@ position = Vector2( -1, -1 )
 rotation = 1.5708
 polygon = PoolVector2Array( 4.99994, -17, -4, -16, -3.99995, 13, 5.00005, 15 )
 
-[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+[node name="ButtonOn" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="ButtonOff" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_toggle"]
 [connection signal="body_exited" from="Area2D" to="." method="_green_toggle"]
