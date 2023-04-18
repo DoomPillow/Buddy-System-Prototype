@@ -30,10 +30,11 @@ shape = SubResource( 1 )
 [node name="Ghost" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1, -20 )
 animation = "CIRCLE"
+frame = 5
 
 [node name="Jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 
-[node name="footsteps" type="AudioStreamPlayer" parent="."]
+[node name="Footsteps" type="AudioStreamPlayer" parent="."]
 stream = SubResource( 2 )
 bus = "pitch variance"

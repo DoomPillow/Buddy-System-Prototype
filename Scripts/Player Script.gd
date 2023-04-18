@@ -28,6 +28,9 @@ var grav: int = 1200;
 onready var image: AnimatedSprite = $Sprite;
 var anim_state : int = 0;
 
+var prevFrame
+	#if prevFrame == -1:
+	#	prevFrame =3;
 
 ### input
 export(String, "wasd","arrows") var ControlScheme = "wasd";
@@ -81,9 +84,11 @@ func move(xinput,yinput,delta):
 		
 		pass
 	
-	########if image.animation == "Walking":
-		
-	
+	# Play footstep sound
+	if image.animation == "Walking" && (image.frame == 0 || image.frame == 2):
+		$Footsteps.play (0.0);
+
+
 	## Jumping and jump sound
 	
 	if yinput && is_on_floor():
