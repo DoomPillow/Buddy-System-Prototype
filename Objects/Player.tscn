@@ -27,7 +27,7 @@ shape = SubResource( 1 )
 modulate = Color( 1, 1, 1, 0.580392 )
 position = Vector2( 1, -20 )
 animation = "CIRCLE"
-frame = 0
+frame = 4
 
 [node name="Meteor" type="AnimatedSprite" parent="."]
 modulate = Color( 1, 1, 1, 0 )
