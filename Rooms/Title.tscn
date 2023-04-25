@@ -99,7 +99,7 @@ position = Vector2( 307.778, 277.694 )
 scale = Vector2( 1.33275, 1.27617 )
 frames = ExtResource( 4 )
 animation = "Title"
-frame = 3
+frame = 2
 playing = true
 offset = Vector2( 7.37503, -61.875 )
 
@@ -116,13 +116,13 @@ animation = "Exit"
 position = Vector2( 147.25, 629.125 )
 frames = ExtResource( 9 )
 animation = "Rectangle"
-frame = 4
 playing = true
 
 [node name="Circ Bubble" type="AnimatedSprite" parent="GUI"]
 position = Vector2( 418.5, 624.75 )
 frames = ExtResource( 9 )
 animation = "Circle"
+frame = 1
 playing = true
 
 [node name="Mouse Cursor" parent="." instance=ExtResource( 8 )]
