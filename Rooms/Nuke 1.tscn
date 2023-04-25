@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Sprites/Nuke levels.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://Objects/Mouse Cursor.tscn" type="PackedScene" id=9]
+
+[node name="Main Scene" type="Node2D"]
+position = Vector2( -47, 12 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Sky"]
+modulate = Color( 0.698039, 0.65098, 0.607843, 1 )
+frames = ExtResource( 1 )
+animation = "sky"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Clouds" parent="ParallaxBackground/Clouds" instance=ExtResource( 3 )]
+position = Vector2( 501, 93 )
+
+[node name="Parallax 1" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_scale = Vector2( 0.8, 0.8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Parallax 1"]
+position = Vector2( 414, 233 )
+frames = ExtResource( 7 )
+animation = "Parallax 1"
+frame = 1
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Background"]
+position = Vector2( 450, 260 )
+frames = ExtResource( 1 )
+animation = "background"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Ground"]
+position = Vector2( 500, 296 )
+frames = ExtResource( 1 )
+animation = "ground"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="ParallaxBackground/Ground"]
+modulate = Color( 1, 1, 1, 0.560784 )
+position = Vector2( 499, 294 )
+frames = ExtResource( 1 )
+animation = "Light"
+playing = true
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 88, -52 )
+collision_layer = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2( 153, 95 )
+polygon = PoolVector2Array( -307, -44, -320, 701, 977, 706, 969.996, 160.374, 967, -73, 347, -65, 136, -62, 136, 30, 226, 27, 460, 158, 661, 162, 667, 180, 673, 321, 667, 327, 643, 330, 579, 333, 588, 300, 562, 293, 552, 329, 549, 333, 544, 335, 515, 337, 437, 336, 156, 510, 93, 511, 0, 501, -65, 503, -77, 491, -83, 381, -73, 363, -45, 349, 164, 348, 191, 367, 231, 358, 373, 260, 404, 257, 405, 227, 328, 225, 200, 159, 34, 156, -70, 148, -77, 126, -69, -5, 130, -3, 128, -105, -309, -115 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 230, 192 )
+
+[node name="Player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 266, 196 )
+_PlayerChar = "CIRCLE"
+ControlScheme = "arrows"
+
+[node name="Mouse Cursor" parent="." instance=ExtResource( 9 )]
+
+[node name="Exit" parent="." instance=ExtResource( 5 )]
+position = Vector2( 286, 549 )
+warp = "Nuke 2"
+
+[node name="Camera" parent="." instance=ExtResource( 6 )]

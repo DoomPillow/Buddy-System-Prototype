@@ -1,0 +1,132 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/Nuke levels.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/COMPUTER.gd" type="Script" id=5]
+[ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Mouse Cursor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Red Button.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sprites/Nuke sprites/pipe.png" type="Texture" id=11]
+
+[node name="Main Scene" type="Node2D"]
+position = Vector2( -47, 12 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Sky"]
+frames = ExtResource( 1 )
+animation = "sky"
+frame = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Clouds" parent="ParallaxBackground/Clouds" instance=ExtResource( 3 )]
+position = Vector2( 501, 93 )
+
+[node name="Parallax 1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 0.8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Parallax 1"]
+position = Vector2( 379, 233 )
+frames = ExtResource( 1 )
+animation = "parallax"
+frame = 2
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Background"]
+position = Vector2( 450, 260 )
+frames = ExtResource( 1 )
+animation = "background"
+frame = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Ground"]
+position = Vector2( 500, 296 )
+frames = ExtResource( 1 )
+animation = "ground"
+frame = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 88, -52 )
+collision_layer = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2( 153, 95 )
+polygon = PoolVector2Array( -255, 27, -266, 601, 869, 601, 893, -134, -31, -506, -23, -331, -31, -134, -24, -51, -28, 7, 11, 63, 23, 55, 8, -7, 92, -5, 411, -3, 617, -8, 735, -3, 760, 40, 760, 388, 751, 446, 727, 458, 492, 454, 180, 463, -139, 457, -157, 451, -169, 425, -171, 18, -138, -2, -107, -8, -37, 106, -29, 102, -94, -16, -95, -40, -90, -123, -85, -328, -84, -509, -251, -121 )
+
+[node name="Mouse Cursor" parent="." instance=ExtResource( 9 )]
+
+[node name="Camera" parent="." instance=ExtResource( 6 )]
+
+[node name="COMPUTER" type="AnimatedSprite" parent="."]
+position = Vector2( 548, 197 )
+frames = ExtResource( 1 )
+animation = "comp detonate"
+playing = true
+script = ExtResource( 5 )
+
+[node name="Button" parent="." instance=ExtResource( 10 )]
+position = Vector2( 372, 489 )
+nuke_status = -1
+
+[node name="Button2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 731, 479 )
+nuke_status = 1
+
+[node name="Door" parent="." instance=ExtResource( 2 )]
+position = Vector2( 371, 468 )
+rotation = 1.5708
+uses_button = true
+
+[node name="Button" parent="Door" instance=ExtResource( 8 )]
+position = Vector2( 17.0009, 244 )
+rotation = -1.5708
+
+[node name="Door2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 729, 460 )
+rotation = 1.5708
+uses_button = true
+
+[node name="Button" parent="Door2" instance=ExtResource( 8 )]
+position = Vector2( 25.9993, -203 )
+rotation = -1.5708
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 191, -206 )
+
+[node name="Player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 194, -260 )
+_PlayerChar = "CIRCLE"
+ControlScheme = "arrows"
+
+[node name="Pipe" type="Sprite" parent="."]
+position = Vector2( 213, 42 )
+texture = ExtResource( 11 )

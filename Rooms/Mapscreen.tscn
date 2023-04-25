@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Sprites/Map Animation.tres" type="Animation" id=1]
+[ext_resource path="res://Sprites/Endscreen.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Scripts/Win Animation.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Winscreen.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/Mapscreen.tres" type="SpriteFrames" id=5]
+
+[node name="Win Screen" type="Node2D"]
+script = ExtResource( 4 )
+warp = "Level 0.5"
+
+[node name="Map Animation" type="AnimationPlayer" parent="."]
+method_call_mode = 1
+"anims/New Anim" = ExtResource( 1 )
+script = ExtResource( 3 )
+anim = "New Anim"
+
+[node name="Ground" type="AnimatedSprite" parent="Map Animation"]
+frames = ExtResource( 5 )
+animation = "Ground"
+
+[node name="Players" type="AnimatedSprite" parent="Map Animation"]
+position = Vector2( -9, 13 )
+frames = ExtResource( 5 )
+animation = "Players wow"
+frame = 2
+playing = true
+
+[node name="Map" type="AnimatedSprite" parent="Map Animation"]
+position = Vector2( -41, 46 )
+frames = ExtResource( 5 )
+animation = "Map Small"
+frame = 4
+
+[node name="Big Map" type="AnimatedSprite" parent="Map Animation"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -9, 13 )
+frames = ExtResource( 5 )
+animation = "Map Large Open"
+
+[node name="Big Map open" type="AnimatedSprite" parent="Map Animation"]
+visible = false
+position = Vector2( -9, 13 )
+frames = ExtResource( 5 )
+animation = "Map Large Idle"
+playing = true
+
+[node name="trans_screen" type="ColorRect" parent="Map Animation"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -579.0
+margin_top = -373.0
+margin_right = 580.0
+margin_bottom = 385.0
+color = Color( 0.207843, 0.133333, 0.0823529, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="continue" type="AnimatedSprite" parent="."]
+modulate = Color( 1, 0.705882, 0.443137, 0 )
+position = Vector2( -12, -284 )
+z_index = 1
+frames = ExtResource( 2 )
+animation = "Anykey"
+frame = 2
+playing = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 0.56, 0.58 )
+
+[connection signal="animation_finished" from="Map Animation" to="." method="_on_Win_Animation_animation_finished"]

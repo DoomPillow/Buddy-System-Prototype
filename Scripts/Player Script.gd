@@ -93,16 +93,26 @@ func move(xinput,yinput,delta):
 func _physics_process(delta):
 	
 	# AAAAAAAAAGGGGGGHHHHHH!!!!!
-	velocity.y = min(velocity.y,3200)
-	if global_position.y > 620:
-		if Global.currentlevel == 0:
-			print('boog')
-			global_position.y -= 10000
+	velocity.y = min(velocity.y,3000)
+	if velocity.y > 2900:
+		$Particles.emitting = true;
+		$Meteor.modulate.a = lerp($Meteor.modulate.a, 0.7, 0.1);
+	else:
+		$Particles.emitting = false;
+		$Meteor.modulate.a = 0;
+	
+	if global_position.y > 650:
+		if Global.currentlevel == -1:
+			global_position.y -= 10000;
+			global_position.x += rand_range(-10,10);
 		else:
 			if $Ghost.ogpos == Vector2(0,0):
-				$Ghost.ogpos = global_position
+				$Ghost.ogpos = global_position;
 			$Ghost.active = true;
-			
+			$Sprite.visible = false;
+			collision_layer = 0;
+			collision_mask = 0;
+	
 	
 	
 	# Adjust global positions
@@ -129,26 +139,29 @@ func _physics_process(delta):
 	# Make it so players cant launch each other out of existence
 	velocity.y = max(velocity.y,-jumph);
 	# Actually move
-	velocity = move_and_slide(velocity + push,Vector2.UP);
+	if image.visible:
+		velocity = move_and_slide(velocity + push,Vector2.UP);
+	else:
+		velocity.y = 0;
 	
 	# Push
 	push.x = lerp(push.x,0,0.4);
 	push.y = lerp(push.y,0,0.4);
 	
 	# Clamp position
-	global_position.x = clamp(global_position.x,0,980)
-	global_position.y = clamp(global_position.y,0,1000)
+	global_position.x = clamp(global_position.x,0,980);
+	global_position.y = clamp(global_position.y,0,1000);
 	
 	### ABILITIES	
 	if _PlayerChar == "CIRCLE":
 		if using_ability:
 				
-				collision_mask = 1;
+				collision_mask = 1 if collision_mask != 0 else 0;
 				if (image.frames) != load("res://Sprites/Circle P Animations.tres"):
 					image.frames = load("res://Sprites/Circle P Animations.tres");
 				pass 
 		else:
-			collision_mask = 3;
+			collision_mask = 3 if collision_mask != 0 else 0;
 			if (image.frames) != load("res://Sprites/Circle Animations.tres"):
 				image.frames = load("res://Sprites/Circle Animations.tres");
 		
@@ -172,14 +185,19 @@ func _physics_process(delta):
 			
 			if was_using_ability:
 				was_using_ability = false;
-				anim_state = 3;
+				var _anim_complete = anim_state == 2 || (image.frame == 3 && anim_state == 1);
+				
 				var bounceray = get_world_2d().direct_space_state.intersect_ray(global_position+Vector2(-10,0),global_position + Vector2(10,-50),[self]);
-				if bounceray.size() > 0:
+				if bounceray.size() > 0 && _anim_complete:
+					anim_state = 3;
 					var obj = instance_from_id(bounceray.collider_id);
 					if str(obj.get_class()) == "KinematicBody2D":
 						obj.push.y -= 2000;
-					
-				
+				elif !_anim_complete:
+					anim_state = 4;
+				elif bounceray.size() <= 0:
+					anim_state = 3;
+
 				pass
 			
 			# Offset
@@ -204,4 +222,11 @@ func _physics_process(delta):
 			image.animation = "Bounce up"
 			if image.frame == 4:
 				anim_state = 0;
+		4:
+			image.animation = "Bounce down";
+			image.frame = (lerp(image.frame, 0, 0.01));
+			image.playing = false;
+			if image.frame == 0:
+				anim_state = 0;
+				image.playing = true;
 			pass

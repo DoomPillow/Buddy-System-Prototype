@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://Objects/Mouse Cursor.tscn" type="PackedScene" id=9]
+
+[node name="Main Scene" type="Node2D"]
+position = Vector2( -47, 12 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Sky"]
+frames = ExtResource( 7 )
+animation = "Sky"
+frame = 8
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Clouds" parent="ParallaxBackground/Clouds" instance=ExtResource( 3 )]
+position = Vector2( 501, 93 )
+
+[node name="Parallax 1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 0.8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Parallax 1"]
+position = Vector2( 414, 233 )
+frames = ExtResource( 7 )
+animation = "Parallax 1"
+frame = 8
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Background"]
+position = Vector2( 450, 260 )
+frames = ExtResource( 7 )
+animation = "Background"
+frame = 8
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Ground"]
+position = Vector2( 500, 296 )
+frames = ExtResource( 7 )
+animation = "Ground"
+frame = 8
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 88, -52 )
+collision_layer = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2( -30, 24 )
+polygon = PoolVector2Array( -60, 419, 168, 422, 173, 389, 342, 388, 344, 367, 359, 356, 391, 355, 558, 355, 585, 360, 590, 385, 729, 386, 740, 424, 976, 425, 1038, 417, 1040, 671, -73, 681 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 526, 326 )
+
+[node name="Player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 562, 324 )
+_PlayerChar = "CIRCLE"
+ControlScheme = "arrows"
+
+[node name="Mouse Cursor" parent="." instance=ExtResource( 9 )]
+
+[node name="Exit" parent="." instance=ExtResource( 5 )]
+position = Vector2( 965, 394 )
+
+[node name="Camera" parent="." instance=ExtResource( 6 )]

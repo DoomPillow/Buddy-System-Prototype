@@ -1,0 +1,153 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Sprites/Nuke levels.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://Objects/nukecode.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Mouse Cursor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Red Button.tscn" type="PackedScene" id=10]
+
+[node name="Main Scene" type="Node2D"]
+position = Vector2( -47, 12 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Sky"]
+frames = ExtResource( 1 )
+animation = "sky"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+
+[node name="Clouds" parent="ParallaxBackground/Clouds" instance=ExtResource( 3 )]
+position = Vector2( 501, 93 )
+
+[node name="Parallax 1" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
+motion_scale = Vector2( 0.8, 0.8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Parallax 1"]
+position = Vector2( 414, 233 )
+frames = ExtResource( 7 )
+animation = "Parallax 1"
+frame = 1
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Background"]
+position = Vector2( 450, 260 )
+frames = ExtResource( 1 )
+animation = "background"
+frame = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Ground"]
+position = Vector2( 500, 296 )
+frames = ExtResource( 1 )
+animation = "ground"
+frame = 1
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 88, -52 )
+collision_layer = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2( 153, 95 )
+polygon = PoolVector2Array( -166, 259, -159, 386, 643, 382, 657, 337, 779, 333, 787, 219, 659, 214, 654, 80, -70, 83, -78, 251, -240, 256, -337, -165, 970, -159, 997, 682, -399, 705, -239, 263 )
+
+[node name="Mouse Cursor" parent="." instance=ExtResource( 9 )]
+
+[node name="Exit" parent="." instance=ExtResource( 5 )]
+position = Vector2( 964, 377 )
+warp = "Nuke 3"
+
+[node name="Camera" parent="." instance=ExtResource( 6 )]
+
+[node name="NukeCode1" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1369, 165 )
+inverse = true
+
+[node name="Button" parent="NukeCode1" instance=ExtResource( 10 )]
+position = Vector2( -1098, 244 )
+
+[node name="NukeCode2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1371, 260 )
+index = 1
+
+[node name="Button" parent="NukeCode2" instance=ExtResource( 10 )]
+position = Vector2( -1006, 151 )
+
+[node name="NukeCode3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1463, 165 )
+index = 2
+
+[node name="Button" parent="NukeCode3" instance=ExtResource( 10 )]
+position = Vector2( -1001, 247 )
+
+[node name="NukeCode4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1462, 250 )
+index = 3
+inverse = true
+
+[node name="Button" parent="NukeCode4" instance=ExtResource( 10 )]
+position = Vector2( -898, 161 )
+
+[node name="NukeCode5" parent="." instance=ExtResource( 8 )]
+index = 4
+
+[node name="Button" parent="NukeCode5" instance=ExtResource( 10 )]
+position = Vector2( 659, 411 )
+
+[node name="NukeCode6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1462, 250 )
+index = 5
+inverse = true
+
+[node name="Button" parent="NukeCode6" instance=ExtResource( 10 )]
+position = Vector2( -703, 161 )
+
+[node name="Door" parent="." instance=ExtResource( 2 )]
+position = Vector2( 907, 323 )
+nukedoor = true
+
+[node name="sign" type="AnimatedSprite" parent="Door"]
+position = Vector2( -370, -98 )
+frames = ExtResource( 1 )
+animation = "Sign DENIED"
+frame = 1
+playing = true
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 123, 408 )
+
+[node name="Player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 408 )
+_PlayerChar = "CIRCLE"
+ControlScheme = "arrows"

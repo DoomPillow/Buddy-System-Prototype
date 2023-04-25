@@ -1,0 +1,225 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Objects/Door.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Red Button.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Clouds.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/rock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
+[ext_resource path="res://Objects/Green Button.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Mouse Cursor.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Objects/Treasure Chest.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sprites/Exit.tres" type="SpriteFrames" id=11]
+
+[node name="Main Scene" type="Node2D"]
+position = Vector2( -47, 12 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Sky"]
+frames = ExtResource( 7 )
+animation = "Sky"
+frame = 7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Clouds" parent="ParallaxBackground/Clouds" instance=ExtResource( 3 )]
+position = Vector2( 501, 93 )
+
+[node name="Parallax 1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.8, 0.8 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Parallax 1"]
+position = Vector2( 414, 233 )
+frames = ExtResource( 7 )
+animation = "Parallax 1"
+frame = 7
+
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Background"]
+position = Vector2( 450, 260 )
+frames = ExtResource( 7 )
+animation = "Background"
+frame = 7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="ParallaxLayer" parent="ParallaxBackground"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="ParallaxBackground/Ground"]
+position = Vector2( 500, 296 )
+frames = ExtResource( 7 )
+animation = "Ground"
+frame = 7
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 88, -52 )
+collision_layer = 3
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2( -79, 0 )
+polygon = PoolVector2Array( -9, 503, 22, 498, 70, 504, 158, 510, 227, 507, 380, 506, 386, 474, 407, 476, 409, 500, 408, 576, 408, 695, -10, 687 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2( -79, -1 )
+polygon = PoolVector2Array( 519, 691, 520, 494, 533, 477, 559, 474, 561, 443, 587, 439, 734, 434, 740, 394, 755, 389, 831, 388, 984, 391, 1089, 389, 1088, 690 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Ground"]
+position = Vector2( 0, -36 )
+polygon = PoolVector2Array( 1058, 145, 1895, 143, 1885, 421, 1056, 430, 1058, 387, 1830, 389, 1819, 179, 1056, 164 )
+
+[node name="Mouse Cursor" parent="." instance=ExtResource( 9 )]
+
+[node name="Camera" parent="." instance=ExtResource( 6 )]
+
+[node name="Door3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 475, 431 )
+rotation = 1.5708
+scale = Vector2( 1, 1.299 )
+uses_button = true
+
+[node name="Button" parent="Door3" instance=ExtResource( 2 )]
+position = Vector2( -22, 3.84912 )
+rotation = -1.5708
+scale = Vector2( 0.769823, 1 )
+collision_layer = 0
+collision_mask = 0
+permstate = true
+
+[node name="Door" parent="." instance=ExtResource( 1 )]
+position = Vector2( 311, -22 )
+rotation = 1.5708
+uses_button = true
+
+[node name="Button" parent="Door" instance=ExtResource( 2 )]
+position = Vector2( 461, 0.998352 )
+rotation = -1.5708
+permstate = true
+
+[node name="Door2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 649, -22 )
+rotation = 1.5708
+uses_button = true
+
+[node name="Button" parent="Door2" instance=ExtResource( 2 )]
+position = Vector2( 391, -8.0014 )
+rotation = -1.5708
+permstate = true
+
+[node name="rock" parent="." instance=ExtResource( 5 )]
+position = Vector2( 296, -105 )
+grv = 30
+
+[node name="rock2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1206, 188 )
+rotation = 1.5708
+grv = 20
+hgrv = -30
+
+[node name="rock7" parent="." instance=ExtResource( 5 )]
+position = Vector2( 657, -105 )
+grv = 30
+
+[node name="Door4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1124, 192 )
+uses_button = true
+
+[node name="Button" parent="Door4" instance=ExtResource( 2 )]
+position = Vector2( -331, 129 )
+collision_layer = 0
+permstate = true
+
+[node name="rock3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1817, 193 )
+rotation = 1.5708
+grv = 5
+hgrv = -30
+
+[node name="rock4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1665, 192 )
+rotation = 1.5708
+grv = -5
+hgrv = -30
+
+[node name="rock5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1509, 192 )
+rotation = 1.5708
+grv = 3
+hgrv = -30
+
+[node name="rock6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1356, 188 )
+rotation = 1.5708
+grv = -6
+hgrv = -30
+
+[node name="Button2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 244, 437 )
+
+[node name="Button3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 546, 408 )
+collision_mask = 0
+
+[node name="Button4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 858, 319 )
+collision_layer = 0
+
+[node name="Treasure Chest" parent="." instance=ExtResource( 10 )]
+position = Vector2( 948, 308 )
+ischest = true
+warp = "Winscreen 1"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Treasure Chest"]
+
+[node name="trans_screen" type="ColorRect" parent="Treasure Chest/CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -85.0
+margin_top = -66.0
+margin_right = 3843.0
+margin_bottom = 2562.0
+color = Color( 0.156863, 0.152941, 0.152941, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Indicator Circ" type="AnimatedSprite" parent="Treasure Chest"]
+position = Vector2( 19, -84 )
+frames = ExtResource( 11 )
+animation = "Indicator circ"
+frame = 1
+
+[node name="Indicator Rect" type="AnimatedSprite" parent="Treasure Chest"]
+position = Vector2( -18, -84 )
+frames = ExtResource( 11 )
+animation = "Indicator rect"
+frame = 1
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 107, 436 )
+
+[node name="Player2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 141, 435 )
+_PlayerChar = "CIRCLE"
+ControlScheme = "arrows"

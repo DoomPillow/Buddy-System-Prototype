@@ -21,7 +21,6 @@ func _process(delta):
 		scale = lerp(scale, Vector2(1,1), 0.3)
 	
 	if global_position != poswas:
-		print(global_position - poswas)
 		poswas = global_position;
 		Global.cursortimer = 210;
 	

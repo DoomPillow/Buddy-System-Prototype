@@ -7,7 +7,7 @@
 [ext_resource path="res://Objects/Exit.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Camera.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Sprites/Levels.tres" type="SpriteFrames" id=7]
-[ext_resource path="res://Sprites/Animation Images/input_tutorial.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/bubbles.tres" type="SpriteFrames" id=8]
 [ext_resource path="res://Objects/Mouse Cursor.tscn" type="PackedScene" id=9]
 
 [node name="Main Scene" type="Node2D"]
@@ -95,9 +95,12 @@ uses_button = true
 [node name="Button" parent="Door" instance=ExtResource( 2 )]
 position = Vector2( 196, 36 )
 
-[node name="InputTutorial" type="Sprite" parent="."]
-position = Vector2( 249, 221 )
-texture = ExtResource( 8 )
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 236, 208 )
+frames = ExtResource( 8 )
+animation = "Bounce"
+frame = 1
+playing = true
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 164, 321 )
